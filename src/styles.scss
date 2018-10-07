@@ -34,18 +34,6 @@ mat-dialog-content.mat-dialog-content {
 }
 
 // Color picker override
-div.color-picker {
-    border-radius: 2px;
-    border: 1px solid #a8a8a8 !important;
-
-    div.box:last-child {
-        display: none !important;
-    }
-
-    div.arrow {
-        top: 170px !important;
-    }
-}
 
 // Snackbar
 snack-bar-container.snackbar {
@@ -63,4 +51,15 @@ snack-bar-container.snackbar {
     }
 }
 
-
+// By default, Angular component styles are scoped
+// to affect the component's view. This means that 
+// the styles you write will affect all the elements 
+// in your component template. They will not affect 
+// elements that are children of other components within
+// your template. 
+// https://material.angular.io/guide/customizing-component-styles
+mat-list-item.mat-list-item {
+    div.mat-list-item-content {
+        padding:0 8px !important;
+    }
+}

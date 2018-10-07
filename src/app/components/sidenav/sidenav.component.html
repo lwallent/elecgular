@@ -1,5 +1,5 @@
 <div class="sidenav">
-    <div class="sidenav-content">
+    <div class="sidenav-content" [ngClass]="{'sidenav-expanded': isExpanded}">
         <mat-nav-list>
             <mat-list-item (click)="dialogService.openMatDialog('shortcuts')" class="open-shortcuts">
                 <span *ngIf="isExpanded" matLine>{{ "SHORTCUTS_TITLE" | translate }}</span>

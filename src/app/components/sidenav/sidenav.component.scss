@@ -9,11 +9,16 @@ div.sidenav {
     }
 
     div.sidenav-content {
-        padding: 0 10px;
-
         mat-divider.mat-divider {
             padding-bottom: 5px;
             margin-top: 5px;
         }
     }
+
+    div.sidenav-expanded {
+        padding:0 10px;
+    }
 }
+
+// Please note that the padding of the *mat-list-item-content*
+// is done in the global styles.scss (due to scoping)

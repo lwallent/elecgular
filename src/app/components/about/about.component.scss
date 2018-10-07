@@ -1,0 +1,45 @@
+div.about {
+    width: 520px;
+    color: dimgray;
+    text-align: center;
+
+    div.about-header {
+        img.logo, span.app-name {
+            vertical-align: middle;
+        }
+
+        span.app-name {
+            font-size: 35px;
+            margin-left: 10px;
+
+            span.app-version {
+                font-size: 15px;
+            }
+        }
+    }
+
+    div.about-content {
+        padding: 24px 0;
+
+        div.about-links {
+            padding-top: 10px;
+
+            p {
+                margin: 0;
+                padding-top: 15px;
+                color: dimgray;
+
+                span {
+                    margin-left: 10px;
+                    text-underline: none;
+                    color: #546e7a;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    div.about-footer {
+        text-align: center;
+    }
+}

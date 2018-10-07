@@ -1,0 +1,21 @@
+<div class="about">
+    <div class="about-header">
+        <img class="logo" src="../resources/icons/rocket_128x128.png">
+        <span class="app-name">
+            Elecgular
+            <span class="app-version">{{ packageInformations?.version }}</span>
+        </span>
+    </div>
+
+    <div class="about-content">
+        <div class="about-description">{{ "ABOUT_DESCRIPTION" | translate }}</div>
+        <div class="about-links">
+            <p>Github: <span (click)="openLink($event)">https://github.com/lwallent</span></p>
+            <p>{{ "WEBSITE" | translate }}: <span (click)="openLink($event)">https://someURL</span></p>
+        </div>
+    </div>
+
+    <div class="about-footer">
+        <span>{{ "Copyright (c) " +  currentYear + " " + packageInformations?.author?.name }}</span>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="settings">
+    <button class="close-dialog" color="primary" mat-dialog-close mat-icon-button>
+        <mat-icon aria-label="Example icon-button with a heart icon">close</mat-icon>
+    </button>
+
+    <h2 mat-dialog-title>{{ "SETTINGS_TITLE" | translate }}</h2>
+
+    <mat-dialog-content>
+        <mat-tab-group>
+            <mat-tab [label]="titles.general | translate">
+                <div class="content general-options">
+                    <mat-card class="general-options-main">
+                        <mat-card-header>
+                            <mat-card-title>{{ "MAIN" | translate }}</mat-card-title>
+                        </mat-card-header>
+                        <hr>
+                        <mat-card-content>
+                            <mat-form-field>
+                                <mat-select (selectionChange)="setLanguage()" [(value)]="settings.general.language"
+                                            [placeholder]="'LANGUAGE' | translate"
+                                            [title]="'TOOLTIPS.LANGUAGE' | translate">
+                                    <mat-option *ngFor="let language of languages"
+                                                [value]="language">
+                                        {{ "LANGUAGES." + language.toUpperCase() | translate }}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-tab>
+
+           
+        </mat-tab-group>
+    </mat-dialog-content>
+</div>

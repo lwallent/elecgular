@@ -1,0 +1,39 @@
+{
+    "DISMISS": "Dismiss",
+    "QUIT": "Quit",
+    "LANGUAGE": "Language",
+    "YES": "Yes",
+    "NO": "No",
+    "OK": "Ok",
+    "SAVE": "Save",
+    "OPEN": "Open",
+    "INITIAL_INFORMATION": "Elecgular is ready ☺",
+    "WELCOME_MESSAGE": "Welcome to the Elecgular app ☺",
+    "UPDATES_FOUND_TITLE": "Updates found",
+    "INSTALL_UPDATES_TITLE": "Install updates",
+    "UPDATES_FOUND_MESSAGE": "Do you want to update the application now?",
+    "INSTALL_UPDATES_MESSAGE": "Updates downloaded, the application will be quit for update...",
+    "WEBSITE": "Website",
+    "CANCEL": "Cancel",
+    "MAIN": "Main",
+    "ABOUT_TITLE": "About",
+    "ABOUT_DESCRIPTION": "Elecgular is an open source project. If you are a developer and you want to contribute to the application, below you will find the links of the project.",
+    "SETTINGS_TITLE": "Settings",
+    "SHORTCUTS_TITLE": "Shortcuts",
+    "SETTINGS_LABELS": {
+        "GENERAL": "General"
+    },
+    "LANGUAGES": {
+        "EN": "English",
+        "DK": "Danish"
+    },
+    "TOOLTIPS": {
+        "ESC": "Closes the dialog window",
+        "FULLSCREEN": "Sets the full screen",
+        "SHORTCUTS": "Shows the shortcuts",
+        "EXPAND_MENU": "Expands the menu",
+        "BRANCH_COLOR": "Changes the branch color",
+        "LANGUAGE": "Changes the language",
+        "SETTINGS": "Opens the settings"
+    }
+}

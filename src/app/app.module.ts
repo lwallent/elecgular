@@ -34,7 +34,7 @@ import {FooterComponent} from "./components/footer/footer.component";
 import {ShortcutsComponent} from "./components/shortcuts/shortcuts.component";
 import {SidenavComponent} from "./components/sidenav/sidenav.component";
 import {AppComponent} from "./components/app.component";
-
+import { FlexLayoutModule } from "@angular/flex-layout";
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, "./assets/i18n/");
 }
@@ -74,7 +74,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatTabsModule,
         MatSelectModule,
         MatSlideToggleModule,
-        MatSliderModule
+        MatSliderModule,
+        FlexLayoutModule
     ],
     providers: [
         DialogService,

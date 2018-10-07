@@ -11,18 +11,20 @@ import * as fs from "fs";
 
 @Component({
     selector: "app-root",
-    template: `<app-toolbar [sidenav]="sidenav"></app-toolbar>
-                <mat-sidenav-container autosize >
-                <mat-sidenav #sidenav mode="side" position="start" opened >
-                    <app-sidenav [sidenav]="sidenav"></app-sidenav>
-                </mat-sidenav>
-                <mat-sidenav-content>
-                    <div [@fadeInOut]>
-                    
-                    </div>
-                </mat-sidenav-content>
-            </mat-sidenav-container>
-            <app-footer></app-footer>`,
+    template: `<div style="height:100%" fxLayout="column">
+                  <app-toolbar [sidenav]="sidenav" fxFlex="45px"></app-toolbar>
+                  <mat-sidenav-container autosize fxFlex >
+                    <mat-sidenav #sidenav mode="side" position="start" opened >
+                        <app-sidenav [sidenav]="sidenav"></app-sidenav>
+                    </mat-sidenav>
+                    <mat-sidenav-content>
+                        <div [@fadeInOut]>
+                        
+                        </div>
+                    </mat-sidenav-content>
+                 </mat-sidenav-container>
+                <app-footer fxFlex="30px" ></app-footer>
+            </div>`,
     styleUrls: ["./app.component.scss"],
     animations: [
         trigger("fadeInOut", [

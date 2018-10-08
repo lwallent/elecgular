@@ -6,15 +6,8 @@ import {DialogService} from "../../services/dialog.service";
 @Component({
     selector: "app-toolbar",
     template: `<div class="toolbar">
-                    <mat-toolbar>
-                        <button (click)="sidenav.open()" class="open-menu"
-                                color="primary" [title]="'TOOLTIPS.OPEN_MENU' | translate"
-                                mat-icon-button>
-                            <mat-icon>menu</mat-icon>
-                        </button>
-                        <!-- <div class="vertical-line"></div> -->
-                        <span class="toolbar-spacer"></span>
-
+                    <mat-toolbar fxLayout="row" fxLayoutAlign="end center" >
+                   
                         <button (click)="utilsService.toggleFullScreen()" class="fullscreen"
                                 color="primary" [title]="'TOOLTIPS.FULLSCREEN' | translate"
                                 mat-icon-button>

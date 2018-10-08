@@ -10,16 +10,5 @@ div.toolbar {
     mat-toolbar.mat-toolbar {
         height: 45px;
         padding: 0 8px;
-
-        div.vertical-line {
-            width: 1px;
-            height: 100%;
-            margin: 0 8px;
-            background-color: #c2c2c2;
-        }
-
-        span.toolbar-spacer {
-            flex: 1 1 auto;
-        }
     }
 }

@@ -19,7 +19,6 @@ import * as fs from "fs";
                     </mat-sidenav>
                     <mat-sidenav-content>
                         <div [@fadeInOut]>
-                        
                         </div>
                     </mat-sidenav-content>
                  </mat-sidenav-container>

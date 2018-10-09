@@ -1,36 +1,72 @@
 <div class="sidenav" style="height:100%">
     <div class="sidenav-content" style="height:100%" [ngClass]="{'sidenav-expanded': isExpanded}">
         <mat-nav-list fxLayout="column" style="height:100%" >
-            <mat-list-item  (click)="dialogService.openMatDialog('shortcuts')" class="open-shortcuts">
-                <span *ngIf="isExpanded" matLine>{{ "SHORTCUTS_TITLE" | translate }}</span>
+
+            <mat-list-item (click)="goA()" >
                 <button color="primary" mat-icon-button>
-                    <mat-icon>timeline</mat-icon>
+                  A
                 </button>
+                <span *ngIf="isExpanded" class="navLbl">Thingy</span>
+               
+            </mat-list-item>
+
+            <mat-list-item (click)="goB()" >
+                <button color="primary" mat-icon-button>
+                   B
+                </button>
+                <span *ngIf="isExpanded" class="navLbl">Stuff</span>
+            </mat-list-item>
+
+            <mat-divider ></mat-divider>
+
+            <mat-list-item  (click)="dialogService.openMatDialog('shortcuts')" >
+                <button color="primary" mat-icon-button>
+                        <mat-icon>timeline</mat-icon>
+                </button>
+                <span *ngIf="isExpanded" class="navLbl">{{ "SHORTCUTS_TITLE" | translate }}</span>
             </mat-list-item>
           
-            <mat-list-item  (click)="dialogService.openMatDialog('about')" class="open-about">
-                <span *ngIf="isExpanded" matLine>{{ "ABOUT_TITLE" | translate }}</span>
+            <mat-list-item  (click)="dialogService.openMatDialog('about')">
                 <button color="primary" mat-icon-button>
-                    <mat-icon>info</mat-icon>
+                <mat-icon>info</mat-icon>
                 </button>
+                <span *ngIf="isExpanded" class="navLbl">{{ "ABOUT_TITLE" | translate }}</span>
             </mat-list-item>
 
             <mat-divider ></mat-divider>
 
             <div fxFlex ></div>
 
-            <mat-list-item   (click)="dialogService.openMatDialog('settings')" class="open-settings">
-                <span *ngIf="isExpanded" matLine>{{ "SETTINGS_TITLE" | translate }}</span>
-                <button color="primary" mat-icon-button>
-                    <mat-icon>settings</mat-icon>
-                </button>
-            </mat-list-item>
+            <mat-divider ></mat-divider>
 
-            <mat-list-item  (click)="toggleExpanded()" >
-                <button class="close-menu" color="primary" [title]="'TOOLTIPS.EXPAND_MENU' | translate" mat-icon-button>
-                    <mat-icon>arrow_forward</mat-icon>
-                </button>
-            </mat-list-item>
+            <div fxLayout="row" *ngIf="isExpanded" style="width:200px">
+                <mat-list-item fxFlex (click)="dialogService.openMatDialog('settings')" >
+                    <button color="primary" mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                    <span class="navLbl">{{ "SETTINGS_TITLE" | translate }}</span>
+                </mat-list-item>
+                <mat-list-item (click)="toggleExpanded()" >
+                    <button class="close-menu" color="primary" [title]="'TOOLTIPS.EXPAND_MENU' | translate" mat-icon-button>
+                        <mat-icon>arrow_backward</mat-icon>
+                    </button>
+                </mat-list-item>
+            </div>
+
+            <div *ngIf="!isExpanded" >
+                <mat-list-item   (click)="dialogService.openMatDialog('settings')" >
+                    <button color="primary" mat-icon-button>
+                        <mat-icon>settings</mat-icon>
+                    </button>
+                </mat-list-item>
+                <mat-list-item  (click)="toggleExpanded()" >
+                    <button class="close-menu" color="primary" [title]="'TOOLTIPS.EXPAND_MENU' | translate" mat-icon-button>
+                        <mat-icon>arrow_forward</mat-icon>
+                    </button>
+                </mat-list-item>
+            </div>
+           
+            
         </mat-nav-list>
     </div>
 </div>

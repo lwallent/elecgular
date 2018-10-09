@@ -19,6 +19,14 @@ export class SidenavComponent implements OnInit {
         this.platform = window.process.platform;
     }
 
+    goA() {
+        console.log('Go A');
+    }
+
+    goB() {
+        console.log('Go B');
+    }
+
     toggleExpanded() {
         this.isExpanded = !this.isExpanded;
     }

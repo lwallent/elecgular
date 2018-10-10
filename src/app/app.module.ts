@@ -35,6 +35,9 @@ import {ShortcutsComponent} from "./components/shortcuts/shortcuts.component";
 import {SidenavComponent} from "./components/sidenav/sidenav.component";
 import {AppComponent} from "./components/app.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { PagesModule } from './pages/pages.module';
+import { AppRoutingModule } from "./app-routing.module";
+
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, "./assets/i18n/");
 }
@@ -75,7 +78,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatSelectModule,
         MatSlideToggleModule,
         MatSliderModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        PagesModule,
+        AppRoutingModule
     ],
     providers: [
         DialogService,

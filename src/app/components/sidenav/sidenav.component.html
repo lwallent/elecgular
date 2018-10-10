@@ -2,19 +2,19 @@
     <div class="sidenav-content" style="height:100%" [ngClass]="{'sidenav-expanded': isExpanded}">
         <mat-nav-list fxLayout="column" style="height:100%" >
 
-            <mat-list-item (click)="goA()" >
+            <mat-list-item routerLink="/stuff" >
                 <button color="primary" mat-icon-button>
                   A
                 </button>
-                <span *ngIf="isExpanded" class="navLbl">Thingy</span>
+                <span *ngIf="isExpanded" class="navLbl">Stuff</span>
                
             </mat-list-item>
 
-            <mat-list-item (click)="goB()" >
+            <mat-list-item routerLink="/thingy" >
                 <button color="primary" mat-icon-button>
                    B
                 </button>
-                <span *ngIf="isExpanded" class="navLbl">Stuff</span>
+                <span *ngIf="isExpanded" class="navLbl">Thingy</span>
             </mat-list-item>
 
             <mat-divider ></mat-divider>

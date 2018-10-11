@@ -1,0 +1,29 @@
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { NgModule } from '@angular/core';
+import { PageIconsComponent } from './icons-page.component';
+
+import { library }  from '@fortawesome/fontawesome-svg-core';
+
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { CommonModule } from '@angular/common';
+import { MatGridListModule } from '@angular/material';
+ 
+//Adding all the modules, not the normal recommended way ...
+library.add(fas, far);
+
+// Add an icon to the library for convenient access in other components
+//library.add(faCoffee);
+
+
+@NgModule({
+    declarations: [
+        PageIconsComponent
+    ],
+    imports: [
+      FontAwesomeModule, CommonModule,  MatGridListModule,
+    ],
+    providers: [],
+    exports: [PageIconsComponent]
+  })
+  export class PageIconsModule { }

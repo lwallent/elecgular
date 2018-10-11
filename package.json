@@ -24,8 +24,13 @@
     "dependencies": {
         "@angular/flex-layout": "^6.0.0-beta.18",
         "@angular/router": "^6.1.10",
+        "@fortawesome/angular-fontawesome": "^0.2.1",
+        "@fortawesome/fontawesome-svg-core": "^1.2.5",
+        "@fortawesome/free-regular-svg-icons": "^5.4.0",
+        "@fortawesome/free-solid-svg-icons": "^5.4.0",
         "electron-log": "2.2.17",
-        "electron-updater": "3.1.2"
+        "electron-updater": "3.1.2",
+        "lodash": "^4.17.11"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "0.8.2",
@@ -44,6 +49,7 @@
         "@angular/platform-browser-dynamic": "^6.1.10",
         "@ngx-translate/core": "10.0.2",
         "@ngx-translate/http-loader": "3.0.1",
+        "@types/lodash": "^4.14.117",
         "@types/mousetrap": "1.6.0",
         "@types/node": "8.9.4",
         "core-js": "2.5.7",

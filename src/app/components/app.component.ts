@@ -17,8 +17,8 @@ import * as fs from "fs";
                     <mat-sidenav #sidenav mode="side" position="start" opened >
                         <app-sidenav [sidenav]="sidenav"></app-sidenav>
                     </mat-sidenav>
-                    <mat-sidenav-content>
-                        <div [@fadeInOut]>
+                    <mat-sidenav-content >
+                        <div [@fadeInOut] style="overflow-y:scroll;">
                             <router-outlet></router-outlet>
                         </div>
                     </mat-sidenav-content>

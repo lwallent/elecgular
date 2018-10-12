@@ -7,7 +7,8 @@ import { library }  from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { CommonModule } from '@angular/common';
-import { MatGridListModule } from '@angular/material';
+import { MatGridListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
  
 //Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
@@ -21,7 +22,7 @@ library.add(fas, far);
         PageIconsComponent
     ],
     imports: [
-      FontAwesomeModule, CommonModule,  MatGridListModule,
+      FontAwesomeModule, CommonModule,  MatGridListModule, MatFormFieldModule, MatInputModule, FormsModule
     ],
     providers: [],
     exports: [PageIconsComponent]

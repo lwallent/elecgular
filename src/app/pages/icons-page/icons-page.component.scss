@@ -21,3 +21,29 @@ mat-grid-list {
         }
     }
 }
+
+.search-form {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.search-field {
+    width: 100%;
+}
+
+h1 {
+    font-weight: 200;
+    color: lightgray;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+hr {
+    margin: 0 20px;
+    padding: 0;
+    margin-bottom: 30px;
+}

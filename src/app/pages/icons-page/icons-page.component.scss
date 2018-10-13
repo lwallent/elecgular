@@ -20,6 +20,10 @@ mat-grid-list {
             text-align: center;
         }
     }
+
+    .icon-tile {
+        cursor: pointer;
+    }
 }
 
 .search-form {
@@ -31,19 +35,4 @@ mat-grid-list {
 
 .search-field {
     width: 100%;
-}
-
-h1 {
-    font-weight: 200;
-    color: lightgray;
-    text-transform: uppercase;
-    font-size: 1.5em;
-    margin-left: 20px;
-    margin-bottom: 5px;
-}
-
-hr {
-    margin: 0 20px;
-    padding: 0;
-    margin-bottom: 30px;
 }

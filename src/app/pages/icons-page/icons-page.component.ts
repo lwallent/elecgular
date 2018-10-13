@@ -3,16 +3,17 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import * as _ from 'lodash';
 
 /**
- *  Nice, General Headline
- * 
+ *  Nice, General Headline (Component?)
+ *  
+ *  Show path in footer thingy?
  *  More sets (glyphicon, mat-icon?)
  *  Add Icon Details page (sizes, colors, properties, animations, buttons, ...)
- *  
+ *  Make transition between overview and details
  */
 
 @Component({
     selector: 'icons-page',
-    template: `<h1>Icon Overview</h1><hr/>
+    template: `<title-page>Icons Overview</title-page>
         
             <form class="search-form">
                 <mat-form-field class="search-field">
@@ -21,10 +22,10 @@ import * as _ from 'lodash';
             </form>
 
             <mat-grid-list cols="8" rowHeight="2:1" style="padding:0 20px;">
-            <mat-grid-tile *ngFor="let topic of faKeysVisible" style="width:100%" > 
+            <mat-grid-tile *ngFor="let key of faKeysVisible" class="icon-tile" [routerLink]="['details', key]"> 
                 <div fxLayout="column" fxLayoutAlign="center center" style="width:100%" >
-                <fa-icon [icon]="['fas', topic]"></fa-icon>
-                    <div class="icon-name" > {{topic}}</div>
+                <fa-icon [icon]="['fas', key]"></fa-icon>
+                    <div class="icon-name" > {{key}}</div>
                 </div>
             </mat-grid-tile>
             </mat-grid-list>`,

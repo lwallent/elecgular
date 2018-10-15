@@ -10,14 +10,15 @@ import {NotificationsService} from "../services/notifications.service";
 import * as fs from "fs";
 
 @Component({
-    selector: "app-root",
+    selector: 'app-root',
     template: `<div style="height:100%" fxLayout="column">
                   <app-toolbar [sidenav]="sidenav" fxFlex="45px"></app-toolbar>
                   <mat-sidenav-container autosize fxFlex >
                     <mat-sidenav #sidenav mode="side" position="start" opened >
                         <app-sidenav [sidenav]="sidenav"></app-sidenav>
                     </mat-sidenav>
-                    <mat-sidenav-content >
+                    <mat-sidenav-content>
+                        <route-title></route-title>
                         <div [@fadeInOut] style="overflow-y:scroll;">
                             <router-outlet></router-outlet>
                         </div>

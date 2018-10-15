@@ -8,10 +8,10 @@ import { PageIconDetailsComponent } from "./pages/icons-page/icon-details-page.c
 
 const routes: Routes = [
     { path: '', component: PageThingyComponent },
-    { path: 'thingy', component: PageThingyComponent },
-    { path: 'stuff',  component: PageStuffComponent },
-    { path: 'icons/details/:name',  component: PageIconDetailsComponent },
-    { path: 'icons',  component: PageIconsComponent }
+    { path: 'thingy', component: PageThingyComponent, data: { title: 'Thingy' }},
+    { path: 'stuff',  component: PageStuffComponent, data: { title: 'Stuff' } },
+    { path: 'icons/details/:name',  component: PageIconDetailsComponent, data: { title: 'Icon Details' } },
+    { path: 'icons',  component: PageIconsComponent, data: { title: 'Icons Overview'} }
 ];
 
 @NgModule({

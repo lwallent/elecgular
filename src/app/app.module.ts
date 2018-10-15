@@ -37,6 +37,7 @@ import {AppComponent} from "./components/app.component";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { PagesModule } from './pages/pages.module';
 import { AppRoutingModule } from "./app-routing.module";
+import { RouteTitleComponent } from "./components/route-title/route-title.component";
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, "./assets/i18n/");
@@ -50,7 +51,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         ShortcutsComponent,
         AboutComponent,
         FooterComponent,
-        SidenavComponent
+        SidenavComponent,
+        RouteTitleComponent
     ],
     imports: [
         BrowserModule,

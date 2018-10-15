@@ -3,15 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'icon-details-page',
-    template: `<title-page>Icon Details</title-page>
-                <p>{{key}}</p>
-                `,
+    template: `<p>{{key}}</p>`,
 })
 export class PageIconDetailsComponent implements OnInit {
    
     key: string;
 
-    constructor( private route: ActivatedRoute) {
+    constructor(private route: ActivatedRoute) {
 
     }
 
@@ -19,8 +17,5 @@ export class PageIconDetailsComponent implements OnInit {
         this.route.params.subscribe((params)=> {
            this.key = params['name']; //it is passed as name for now
         });
-        
     }
-
-
 }

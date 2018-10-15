@@ -13,8 +13,7 @@ import * as _ from 'lodash';
 
 @Component({
     selector: 'icons-page',
-    template: `<title-page>Icons Overview</title-page>
-        
+    template: `
             <form class="search-form">
                 <mat-form-field class="search-field">
                 <input matInput [ngModel]="searchTerm" placeholder="Search for icons" (ngModelChange)="searchDebounced($event)" name="searchTerm" >

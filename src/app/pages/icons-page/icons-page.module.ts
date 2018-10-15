@@ -11,7 +11,6 @@ import { MatGridListModule, MatFormFieldModule, MatInputModule } from '@angular/
 import { FormsModule } from '@angular/forms';
 import { PageIconDetailsComponent } from './icon-details-page.component';
 import { RouterModule } from '@angular/router';
-import { TitlePageComponent } from '../common/page-title/title-page.component';
  
 //Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
@@ -24,7 +23,6 @@ library.add(fas, far);
     declarations: [
         PageIconsComponent,
         PageIconDetailsComponent,
-        TitlePageComponent // Not really the place, redesign how title is made 
     ],
     imports: [
       FontAwesomeModule, 

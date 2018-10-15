@@ -35,5 +35,11 @@
         "BRANCH_COLOR": "Changes the branch color",
         "LANGUAGE": "Changes the language",
         "SETTINGS": "Opens the settings"
+    },
+    "title": {
+        "STUFF": "Stuff Page",
+        "THINGY": "Thingy Page",
+        "ICON_DETAILS": "Icon Details",
+        "ICON_OVERVIEW": "Icon Overview"
     }
 }

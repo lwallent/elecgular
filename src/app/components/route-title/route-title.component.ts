@@ -4,12 +4,12 @@ import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
     selector: 'route-title',
-    template: `<h1>{{title}}</h1><hr/>`,
+    template: `<h1>{{titleKey | translate }}</h1><hr/>`,
     styleUrls: ['route-title.component.scss'],
 })
 export class RouteTitleComponent implements OnInit {
 
-    public title: string;
+    public titleKey: string;
 
     constructor( public router: Router,  private activatedRoute: ActivatedRoute) {
 
@@ -27,8 +27,8 @@ export class RouteTitleComponent implements OnInit {
             .pipe( mergeMap((route:ActivatedRoute) => route.data ))
             .subscribe((data: any) => {
                 //console.log(data);
-                if (data.title) {
-                    this.title = data.title;
+                if (data.titleKey) {
+                    this.titleKey = data.titleKey;
                 }
             });
     }

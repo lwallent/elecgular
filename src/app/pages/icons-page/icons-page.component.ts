@@ -21,12 +21,12 @@ import * as _ from 'lodash';
             </form>
 
             <mat-grid-list cols="8" rowHeight="2:1" style="padding:0 20px;">
-            <mat-grid-tile *ngFor="let key of faKeysVisible" class="icon-tile" [routerLink]="['details', key]"> 
-                <div fxLayout="column" fxLayoutAlign="center center" style="width:100%" >
-                <fa-icon [icon]="['fas', key]"></fa-icon>
-                    <div class="icon-name" > {{key}}</div>
-                </div>
-            </mat-grid-tile>
+                <mat-grid-tile *ngFor="let key of faKeysVisible" class="icon-tile" [routerLink]="['details', key]"> 
+                    <div fxLayout="column" fxLayoutAlign="center center" >
+                        <fa-icon [icon]="['fas', key]"></fa-icon>
+                        <div class="icon-name" > {{key}}</div>
+                    </div>
+                </mat-grid-tile>
             </mat-grid-list>`,
 
     styleUrls: ['./icons-page.component.scss'],

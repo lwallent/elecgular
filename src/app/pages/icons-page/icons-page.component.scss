@@ -3,21 +3,9 @@ mat-grid-list {
 
     mat-grid-tile {
         background: lightblue;
-
-        fa-icon {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 20px;
-        }
-        
+             
         .icon-name {
             font-size: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            text-align: center;
         }
     }
 

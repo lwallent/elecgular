@@ -11,6 +11,7 @@ import { MatGridListModule, MatFormFieldModule, MatInputModule } from '@angular/
 import { FormsModule } from '@angular/forms';
 import { PageIconDetailsComponent } from './icon-details-page.component';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
  
 //Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
@@ -31,6 +32,7 @@ library.add(fas, far);
       MatFormFieldModule, 
       MatInputModule, 
       FormsModule,
+      FlexLayoutModule,
       RouterModule
     ],
     providers: [],

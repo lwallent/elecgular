@@ -63,3 +63,14 @@ mat-list-item.mat-list-item {
         padding:0 2px !important;
     }
 }
+
+ .mat-accent .mat-slider-thumb {
+    background-color: rgba(0, 0, 0, 0.87) !important;
+}
+ .mat-accent .mat-slider-thumb-label {
+    background-color: rgba(204, 11, 11, 0.87) !important;
+}
+
+.mat-accent .mat-slider-track-fill {
+    background-color: rgba(0, 0, 0, 0.87) !important;
+}

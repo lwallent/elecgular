@@ -7,7 +7,7 @@ import { library }  from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { CommonModule } from '@angular/common';
-import { MatGridListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatGridListModule, MatFormFieldModule, MatInputModule, MatSliderModule, MatSlideToggleModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { PageIconDetailsComponent } from './icon-details-page.component';
 import { RouterModule } from '@angular/router';
@@ -31,6 +31,8 @@ library.add(fas, far);
       MatGridListModule, 
       MatFormFieldModule, 
       MatInputModule, 
+      MatSliderModule,
+      MatSlideToggleModule,
       FormsModule,
       FlexLayoutModule,
       RouterModule

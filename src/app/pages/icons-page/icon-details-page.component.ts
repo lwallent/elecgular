@@ -10,11 +10,12 @@ import { ActivatedRoute } from '@angular/router';
                                  <mat-slider [(ngModel)]="rotation" style="width:300px" thumbLabel tickInterval="10" min="0" max="360"></mat-slider>
                     
                             <mat-slide-toggle color="primary" [(ngModel)]="isSpinning"> Spinning </mat-slide-toggle>
+                            <mat-slide-toggle color="primary" (change)="solidChange($event)" [(ngModel)]="isSolid"> Solid </mat-slide-toggle>
                         </div>
                         <div fxFlex="20%" fxLayout="column" fxLayoutAlign="space-around center" class="row-presentation">
                             <code style="font-size:10pt">{{key}}</code>
                             
-                            <div><fa-icon [spin]="isSpinning" [icon]="['fas', key]" size="3x" transform="rotate-{{rotation}}"></fa-icon></div>
+                            <div><fa-icon [spin]="isSpinning" [icon]="[iconVersion, key]" size="3x" transform="rotate-{{rotation}}"></fa-icon></div>
                         </div>
                     </div>
                     
@@ -23,7 +24,7 @@ import { ActivatedRoute } from '@angular/router';
                         <div class="row-label" >Sizes</div>
                         <div fxLayout="row" fxLayoutAlign="space-evenly end" >
                             <div *ngFor="let size of sizes"  fxLayout="column" fxLayoutAlign="start center">
-                                <fa-icon fxFlex="90" [icon]="['fas', key]" size="{{size}}"></fa-icon>
+                                <fa-icon fxFlex="90" [icon]="[iconVersion, key]" size="{{size}}"></fa-icon>
                                 <div fxFlex="10" class="icon-name">{{size}}</div>
                             </div>
                         </div> 
@@ -34,10 +35,12 @@ import { ActivatedRoute } from '@angular/router';
 export class PageIconDetailsComponent implements OnInit {
    
     key: string;
+    iconVersion:string = 'far';
 
     rotation = 100;
 
     isSpinning =false;
+    isSolid =false;
 
     sizes = ['xs', '1x', '2x', '3x', '4x', '5x', '6x' ]
 
@@ -54,5 +57,10 @@ export class PageIconDetailsComponent implements OnInit {
     rotationChange(event) {
         console.log('value ->',event.value);
         this.rotation = event.value;
+    }
+
+    solidChange(event) {
+        console.log('solid ->',event.value);
+        this.iconVersion = this.isSolid? 'fas': 'far';
     }
 }

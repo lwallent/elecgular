@@ -2,15 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { far } from '@fortawesome/free-regular-svg-icons';
 import * as _ from 'lodash';
 
-/**
- *  Nice, General Headline (Component?)
- *  
- *  Show path in footer thingy?
- *  More sets (glyphicon, mat-icon?)
- *  Add Icon Details page (sizes, colors, properties, animations, buttons, ...)
- *  Make transition between overview and details
- */
-
 @Component({
     selector: 'icons-page',
     template: `

@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { PageIconDetailsComponent } from './icon-details-page.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PresentationRowComponent } from './presentation-row.component';
  
 //Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
@@ -24,6 +25,7 @@ library.add(fas, far);
     declarations: [
         PageIconsComponent,
         PageIconDetailsComponent,
+        PresentationRowComponent
     ],
     imports: [
       FontAwesomeModule, 

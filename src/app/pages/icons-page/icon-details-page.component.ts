@@ -9,16 +9,16 @@ import { ActivatedRoute } from '@angular/router';
                           
                                  <mat-slider [(ngModel)]="rotation" style="width:300px" thumbLabel tickInterval="10" min="0" max="360"></mat-slider>
                     
-                            <mat-slide-toggle color="primary" [(ngModel)]="isSpinning"> Spinning </mat-slide-toggle>
+                            <mat-slide-toggle color="primary" [(ngModel)]="isSpinning">Spinning</mat-slide-toggle>
+                            <mat-slide-toggle color="primary" [(ngModel)]="isPulse">Pulse</mat-slide-toggle>
                             <mat-slide-toggle color="primary" (change)="solidChange($event)" [(ngModel)]="isSolid"> Solid </mat-slide-toggle>
                         </div>
                         <div fxFlex="20%" fxLayout="column" fxLayoutAlign="space-around center" class="row-presentation">
                             <code style="font-size:10pt">{{key}}</code>
                             
-                            <div><fa-icon [spin]="isSpinning" [icon]="[iconVersion, key]" size="3x" transform="rotate-{{rotation}}"></fa-icon></div>
+                            <div><fa-icon [spin]="isSpinning" [pulse]="isPulse" [icon]="[iconVersion, key]" size="3x" transform="rotate-{{rotation}}"></fa-icon></div>
                         </div>
-                    </div>
-                    
+                    </div>    
 
                     <div fxLayout="column" class="row-presentation">
                         <div class="row-label" >Sizes</div>
@@ -29,6 +29,28 @@ import { ActivatedRoute } from '@angular/router';
                             </div>
                         </div> 
                     </div>
+
+                    <div fxLayout="column" class="row-presentation">
+                        <div class="row-label" >Angles</div>
+                        <div fxLayout="row" fxLayoutAlign="space-evenly end" >
+                            <div *ngFor="let angle of angles"  fxLayout="column" fxLayoutAlign="start center">
+                                <fa-icon fxFlex="90" [icon]="[iconVersion, key]" size="2x" rotate="{{angle}}"></fa-icon>
+                                <div fxFlex="10" class="icon-name">{{angle}}</div>
+                            </div>
+                        </div> 
+                    </div>
+
+                    <div fxLayout="column" class="row-presentation">
+                        <div class="row-label" >Flipping</div>
+                        <div fxLayout="row" fxLayoutAlign="space-evenly end" >
+                            <div *ngFor="let flip of flipped"  fxLayout="column" fxLayoutAlign="start center">
+                                <fa-icon fxFlex="90" [icon]="[iconVersion, key]" size="2x" flip="{{flip}}"></fa-icon>
+                                <div fxFlex="10" class="icon-name">{{flip}}</div>
+                            </div>
+                        </div> 
+                    </div>
+
+                   
                 </div>`,
     styleUrls: ['./icon-details-page.component.scss'],
 })
@@ -40,9 +62,15 @@ export class PageIconDetailsComponent implements OnInit {
     rotation = 100;
 
     isSpinning =false;
+    isPulse =false;
     isSolid =false;
 
-    sizes = ['xs', '1x', '2x', '3x', '4x', '5x', '6x' ]
+    sizes = ['xs', '1x', '2x', '3x', '4x', '5x', '6x' ];
+
+    angles = ['0', '90', '180', '270' ];
+
+    flipped = ['horizontal', 'vertical', 'both' ];
+
 
     constructor(private route: ActivatedRoute) {
 
@@ -55,12 +83,10 @@ export class PageIconDetailsComponent implements OnInit {
     }
 
     rotationChange(event) {
-        console.log('value ->',event.value);
         this.rotation = event.value;
     }
 
     solidChange(event) {
-        console.log('solid ->',event.value);
         this.iconVersion = this.isSolid? 'fas': 'far';
     }
 }

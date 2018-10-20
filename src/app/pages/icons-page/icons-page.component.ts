@@ -23,7 +23,7 @@ import * as _ from 'lodash';
             <mat-grid-list cols="8" rowHeight="2:1" style="padding:0 20px;">
                 <mat-grid-tile *ngFor="let key of faKeysVisible" class="icon-tile" [routerLink]="['details', key]"> 
                     <div fxLayout="column" fxLayoutAlign="center center" >
-                        <fa-icon [icon]="['fas', key]"></fa-icon>
+                        <fa-icon [icon]="['far', key]"></fa-icon>
                         <div class="icon-name" > {{key}}</div>
                     </div>
                 </mat-grid-tile>

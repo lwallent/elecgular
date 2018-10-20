@@ -9,19 +9,22 @@ import { ActivatedRoute } from '@angular/router';
                           
                             <mat-slider [(ngModel)]="rotation" style="width:300px" thumbLabel tickInterval="10" min="0" max="360"></mat-slider>
                     
-                            <mat-slide-toggle color="primary" [(ngModel)]="isSpinning">Spinning</mat-slide-toggle>
-                            <mat-slide-toggle color="primary" [(ngModel)]="isPulse">Pulse</mat-slide-toggle>
-                            <mat-slide-toggle color="primary" (change)="solidChange($event)" [(ngModel)]="isSolid"> Solid </mat-slide-toggle>
-                            <code style="font-size:10pt">{{key}}</code>
-                            
+                            <div fxLayout="row" fxLayoutAlign="space-between center">
+                                <mat-slide-toggle color="primary" [(ngModel)]="isSpinning">Spinning</mat-slide-toggle>
+                                <mat-slide-toggle color="primary" [(ngModel)]="isPulse">Pulse</mat-slide-toggle>
+                                <mat-slide-toggle color="primary" [(ngModel)]="isInverse">Inverse</mat-slide-toggle>
+                                <mat-slide-toggle color="primary" (change)="solidChange($event)" [(ngModel)]="isSolid"> Solid </mat-slide-toggle>
+                            </div>
+                            <!-- <code style="font-size:8pt">
+                                 &lt;fa-icon [inverse]="{{isInverse}}" [spin]="{{isSpinning}}" [pulse]="{{isPulse}}" [icon]="[{{iconVersion}}, {{key}}]" size="3x" transform="rotate-{{rotation}}"&gt;
+                            </code> -->
                         </div>
 
                         <presentation-row fxFlex="20%" title="Result">
                             <div style="padding:25px">
-                                <fa-icon [spin]="isSpinning" [pulse]="isPulse" [icon]="[iconVersion, key]" size="3x" transform="rotate-{{rotation}}"></fa-icon>
+                                <fa-icon [inverse]="isInverse" [spin]="isSpinning" [pulse]="isPulse" [icon]="[iconVersion, key]" size="3x" transform="rotate-{{rotation}}"></fa-icon>
                             </div>
                         </presentation-row>
-                        
                     </div>    
 
                     <presentation-row title="Sizes">
@@ -44,8 +47,6 @@ import { ActivatedRoute } from '@angular/router';
                             <div fxFlex="10" class="icon-name">{{flip}}</div>
                         </div>
                     </presentation-row>
-                    
-                   
                 </div>`,
     styleUrls: ['./icon-details-page.component.scss'],
 })
@@ -56,9 +57,10 @@ export class PageIconDetailsComponent implements OnInit {
 
     rotation = 100;
 
-    isSpinning =false;
-    isPulse =false;
-    isSolid =false;
+    isSpinning = false;
+    isPulse = false;
+    isSolid = false;
+    isInverse = false;
 
     sizes = ['xs', '1x', '2x', '3x', '4x', '5x', '6x' ];
 

@@ -40,6 +40,8 @@
         "STUFF": "Stuff Page",
         "THINGY": "Thingy Page",
         "ICON_DETAILS": "Icon Details",
-        "ICON_OVERVIEW": "Icon Overview"
+        "FA_ICON_OVERVIEW": "Font Awesome Icon Overview",
+        "GLYPH_ICON_OVERVIEW": "Glyph Icon Overview",
+        "MAT_ICON_OVERVIEW": "Material Icon Overview"
     }
 }

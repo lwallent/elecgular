@@ -2,26 +2,26 @@
     <div class="sidenav-content" style="height:100%" [ngClass]="{'sidenav-expanded': isExpanded}">
         <mat-nav-list fxLayout="column" style="height:100%" >
 
-            <mat-list-item routerLink="/stuff" >
+            <mat-list-item routerLink="/icons/glyph" >
                 <button color="primary" mat-icon-button>
                   A
                 </button>
-                <span *ngIf="isExpanded" class="navLbl">Stuff</span>
+                <span *ngIf="isExpanded" class="navLbl">Glyph Icons</span>
                
             </mat-list-item>
 
-            <mat-list-item routerLink="/thingy" >
+            <mat-list-item routerLink="/icons/mat" >
                 <button color="primary" mat-icon-button>
                    B
                 </button>
-                <span *ngIf="isExpanded" class="navLbl">Thingy</span>
+                <span *ngIf="isExpanded" class="navLbl">MAT Icons </span>
             </mat-list-item>
 
-            <mat-list-item routerLink="/icons" >
+            <mat-list-item routerLink="/icons/fa" >
                 <button color="primary" mat-icon-button>
                     <mat-icon>insert_emoticon</mat-icon>
                 </button>
-                <span *ngIf="isExpanded" class="navLbl">Icons</span>
+                <span *ngIf="isExpanded" class="navLbl">FA Icons</span>
             </mat-list-item>
 
             <mat-divider ></mat-divider>

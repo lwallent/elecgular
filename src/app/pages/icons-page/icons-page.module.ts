@@ -13,6 +13,8 @@ import { PageIconDetailsComponent } from './icon-details-page.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PresentationRowComponent } from './presentation-row.component';
+import { GlyphIconPageComponent } from './glyph-icon-page.component';
+import { MatIconPageComponent } from './mat-icon-page.component';
  
 //Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
@@ -21,7 +23,9 @@ library.add(fas, far);
     declarations: [
         PageIconsComponent,
         PageIconDetailsComponent,
-        PresentationRowComponent
+        PresentationRowComponent,
+        GlyphIconPageComponent,
+        MatIconPageComponent
     ],
     imports: [
       FontAwesomeModule, 
@@ -36,6 +40,10 @@ library.add(fas, far);
       RouterModule
     ],
     providers: [],
-    exports: [PageIconsComponent]
+    exports: [
+      PageIconsComponent,
+      GlyphIconPageComponent,
+      MatIconPageComponent
+    ]
   })
   export class PageIconsModule { }

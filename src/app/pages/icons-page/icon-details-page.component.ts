@@ -80,6 +80,24 @@ import { ActivatedRoute } from '@angular/router';
                             <div fxFlex="10" class="icon-name">Disabled</div>
                         </div>
                   </presentation-row>
+                  <presentation-row title="As Raised Buttons">
+                        <button mat-raised-button>
+                            <fa-icon [icon]="[iconVersion, key]" ></fa-icon> Basic
+                        </button>
+                        <button mat-raised-button color="primary">
+                            <fa-icon [icon]="[iconVersion, key]" ></fa-icon> Primary
+                        </button>
+                        <button mat-raised-button color="accent">
+                            <fa-icon [icon]="[iconVersion, key]" ></fa-icon> Accent
+                        </button>
+                        <button mat-raised-button color="warn">
+                            <fa-icon [icon]="[iconVersion, key]" ></fa-icon> Warn
+                        </button>
+                        <button mat-raised-button disabled>
+                            <fa-icon [icon]="[iconVersion, key]" ></fa-icon> Disabled
+                        </button>
+                  </presentation-row>
+                  <div style="height:160px"></div> <!-- temp spacer -->
                 </div>`,
     styleUrls: ['./icon-details-page.component.scss'],
 })

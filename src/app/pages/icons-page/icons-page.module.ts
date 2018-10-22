@@ -15,7 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PresentationRowComponent } from './presentation-row.component';
 import { GlyphIconPageComponent } from './glyph-icon-page.component';
 import { MatIconPageComponent } from './mat-icon-page.component';
- 
+import {MatButtonModule} from '@angular/material/button';
 //Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
 
@@ -35,6 +35,7 @@ library.add(fas, far);
       MatInputModule, 
       MatSliderModule,
       MatSlideToggleModule,
+      MatButtonModule,
       FormsModule,
       FlexLayoutModule,
       RouterModule

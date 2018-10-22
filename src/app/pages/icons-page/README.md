@@ -5,7 +5,7 @@
  * Show path in footer thingy?
  * More pages (glyphicon, mat-icon?)
  * Add Sub sections to Icons on sidebar a la MS DevOps? 
- * 
+ * A Scrollbar has appeared in the sidebar??
 
 ### Overview Page
 * Improve styling and clean up

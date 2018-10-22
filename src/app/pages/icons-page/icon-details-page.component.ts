@@ -47,6 +47,39 @@ import { ActivatedRoute } from '@angular/router';
                             <div fxFlex="10" class="icon-name">{{flip}}</div>
                         </div>
                     </presentation-row>
+
+                    <presentation-row title="As Icon Buttons">
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <button mat-icon-button>
+                                <fa-icon [icon]="[iconVersion, key]" ></fa-icon>
+                            </button>
+                            <div fxFlex="10" class="icon-name">Basic</div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <button mat-icon-button color="primary">
+                                <fa-icon [icon]="[iconVersion, key]" ></fa-icon>
+                            </button>
+                            <div fxFlex="10" class="icon-name">Primary</div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <button mat-icon-button color="accent">
+                                <fa-icon [icon]="[iconVersion, key]" ></fa-icon>
+                            </button>
+                            <div fxFlex="10" class="icon-name">Accent</div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <button mat-icon-button color="warn">
+                                <fa-icon [icon]="[iconVersion, key]" ></fa-icon>
+                            </button>
+                            <div fxFlex="10" class="icon-name">Warn</div>
+                        </div>
+                        <div fxLayout="column" fxLayoutAlign="start center">
+                            <button mat-icon-button disabled>
+                                <fa-icon [icon]="[iconVersion, key]" ></fa-icon>
+                            </button>
+                            <div fxFlex="10" class="icon-name">Disabled</div>
+                        </div>
+                  </presentation-row>
                 </div>`,
     styleUrls: ['./icon-details-page.component.scss'],
 })

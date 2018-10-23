@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    template:`<h1>Hello Glyph</h1>`
+    template: '<h1>Hello Glyph</h1>',
 })
 export class GlyphIconPageComponent {
 

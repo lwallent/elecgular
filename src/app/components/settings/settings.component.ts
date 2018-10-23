@@ -1,38 +1,38 @@
-import {Component, OnInit} from "@angular/core";
-import {Settings} from "../../models/settings";
-import {SettingsService} from "../../services/settings.service";
-import {TranslateService} from "@ngx-translate/core";
+import {Component, OnInit} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {ISettings} from '../../models/settings';
+import {SettingsService} from '../../services/settings.service';
 @Component({
-    selector: "app-settings",
-    templateUrl: "./settings.component.html",
-    styleUrls: ["./settings.component.scss"]
+    selector: 'app-settings',
+    templateUrl: './settings.component.html',
+    styleUrls: ['./settings.component.scss'],
 })
 export class SettingsComponent implements OnInit {
 
-    public settings: Settings;
+    public settings: ISettings;
 
     public titles: any;
 
-    public languages: Array<string>;
+    public languages: string[];
 
     constructor(public settingsService: SettingsService,
                 public translateService: TranslateService) {
     }
 
-    ngOnInit() {
+    public ngOnInit() {
         this.settings = this.settingsService.getSettings();
 
         this.titles = {};
-        for (let title in this.settings) {
-            this.titles[title] = "SETTINGS_LABELS." + title.split(/(?=[A-Z])/).join("_").toUpperCase();
+        // tslint:disable-next-line:forin
+        for (const title in this.settings) {
+            this.titles[title] = 'SETTINGS_LABELS.' + title.split(/(?=[A-Z])/).join('_').toUpperCase();
         }
 
-        this.languages = ["en", "dk"];
+        this.languages = ['en', 'dk'];
     }
 
-
     public setLanguage() {
-        this.settingsService.setLanguage(this.settings.general.language).then((settings: Settings) => {
+        this.settingsService.setLanguage(this.settings.general.language).then((settings: ISettings) => {
             this.translateService.use(settings.general.language);
 
             this.settings = settings;

@@ -1,17 +1,17 @@
-import {Injectable} from "@angular/core";
-import {StorageService} from "./storage.service";
-import {Settings} from "../models/settings";
-import {TranslateService} from "@ngx-translate/core";
-import {HttpClient} from "@angular/common/http";
-import {UtilsService} from "./utils.service";
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {ISettings} from '../models/settings';
+import {StorageService} from './storage.service';
+import {UtilsService} from './utils.service';
 
 @Injectable()
 export class SettingsService {
 
-    private readonly SETTINGS_KEY: string = "settings";
-    private readonly DEFAULT_SETTINGS_URL: string = "./assets/data/defaultSettings.json";
+    private readonly SETTINGS_KEY: string = 'settings';
+    private readonly DEFAULT_SETTINGS_URL: string = './assets/data/defaultSettings.json';
 
-    private settings: Settings;
+    private settings: ISettings;
 
     constructor(private storageService: StorageService,
                 private http: HttpClient,
@@ -20,19 +20,19 @@ export class SettingsService {
 
     /**
      * Initialize the settingsService with default or saved values and return them.
-     * @returns {Promise<Settings>}
+     * @returns {Promise<ISettings>}
      */
-    public init(): Promise<Settings> {
+    public init(): Promise<ISettings> {
         return this.storageService.exist(this.SETTINGS_KEY).then((exist: any) => {
             if (!exist) {
-                return this.getDefaultSettings().then((defaultSettings: Settings) => {
+                return this.getDefaultSettings().then((defaultSettings: ISettings) => {
                     return this.storageService.set(this.SETTINGS_KEY, defaultSettings);
                 });
             } else {
                 return this.storageService.get(this.SETTINGS_KEY);
             }
-        }).then((settings: Settings) => {
-            return this.getDefaultSettings().then((defaultSettings: Settings) => {
+        }).then((settings: ISettings) => {
+            return this.getDefaultSettings().then((defaultSettings: ISettings) => {
                 if (!this.utilsService.haveSameStructure(defaultSettings, settings)) {
                     this.settings = defaultSettings;
 
@@ -48,21 +48,20 @@ export class SettingsService {
 
     /**
      * Set the first time (of the app start) to false.
-     * @returns {Promise<Settings>}
+     * @returns {Promise<ISettings>}
      */
-    public setFirstTime(): Promise<Settings> {
+    public setFirstTime(): Promise<ISettings> {
         this.settings.general.firstTime = false;
 
         return this.update();
     }
 
-
     /**
      * Set the new language and update the settingsService.
      * @param {string} language
-     * @returns {Promise<Settings>}
+     * @returns {Promise<ISettings>}
      */
-    public setLanguage(language: string): Promise<Settings> {
+    public setLanguage(language: string): Promise<ISettings> {
         this.settings.general.language = language;
 
         return this.update();
@@ -70,27 +69,27 @@ export class SettingsService {
 
     /**
      * Return a copy of the current settingsService.
-     * @returns {Settings}
+     * @returns {ISettings}
      */
-    public getSettings(): Settings {
+    public getSettings(): ISettings {
         return JSON.parse(JSON.stringify(this.settings));
     }
 
     /**
      * Return the default settingsService.
-     * @returns {Promise<Settings>}
+     * @returns {Promise<ISettings>}
      */
-    private getDefaultSettings(): Promise<Settings> {
-        return this.http.get(this.DEFAULT_SETTINGS_URL).toPromise().then((settings: Settings) => {
+    private getDefaultSettings(): Promise<ISettings> {
+        return this.http.get(this.DEFAULT_SETTINGS_URL).toPromise().then((settings: ISettings) => {
             return settings;
         });
     }
 
     /**
      * Overwrite the settings in the storage.
-     * @returns {Promise<Settings>}
+     * @returns {Promise<ISettings>}
      */
-    private update(): Promise<Settings> {
+    private update(): Promise<ISettings> {
         return this.storageService.set(this.SETTINGS_KEY, this.settings);
     }
 

@@ -1,16 +1,9 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from '@angular/core';
 
 @Component({
-    selector: "app-shortcuts",
-    templateUrl: "./shortcuts.component.html",
-    styleUrls: ["./shortcuts.component.scss"]
+    selector: 'app-shortcuts',
+    templateUrl: './shortcuts.component.html',
+    styleUrls: ['./shortcuts.component.scss'],
 })
-export class ShortcutsComponent implements OnInit {
-
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
-
+export class ShortcutsComponent {
 }

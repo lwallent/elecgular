@@ -1,19 +1,7 @@
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
-import {ToolbarComponent} from "./components/toolbar/toolbar.component";
-import {UtilsService} from "./services/utils.service";
-import {ShortcutsService} from "./services/shortcuts.service";
-import {DialogService} from "./services/dialog.service";
-import {SettingsComponent} from "./components/settings/settings.component";
-import {SettingsService} from "./services/settings.service";
-import {NotificationsService} from "./services/notifications.service";
-import {StorageService} from "./services/storage.service";
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
-import {UpdateService} from "./services/update.service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {FormsModule} from '@angular/forms';
 import {
     MatButtonModule,
     MatCardModule,
@@ -27,20 +15,32 @@ import {
     MatSlideToggleModule,
     MatSnackBarModule,
     MatTabsModule,
-    MatToolbarModule
-} from "@angular/material";
-import {AboutComponent} from "./components/about/about.component";
-import {FooterComponent} from "./components/footer/footer.component";
-import {ShortcutsComponent} from "./components/shortcuts/shortcuts.component";
-import {SidenavComponent} from "./components/sidenav/sidenav.component";
-import {AppComponent} from "./components/app.component";
-import { FlexLayoutModule } from "@angular/flex-layout";
+    MatToolbarModule,
+} from '@angular/material';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { AppRoutingModule } from './app-routing.module';
+import {AboutComponent} from './components/about/about.component';
+import {AppComponent} from './components/app.component';
+import {FooterComponent} from './components/footer/footer.component';
+import { RouteTitleComponent } from './components/route-title/route-title.component';
+import {SettingsComponent} from './components/settings/settings.component';
+import {ShortcutsComponent} from './components/shortcuts/shortcuts.component';
+import {SidenavComponent} from './components/sidenav/sidenav.component';
+import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import { PagesModule } from './pages/pages.module';
-import { AppRoutingModule } from "./app-routing.module";
-import { RouteTitleComponent } from "./components/route-title/route-title.component";
+import {DialogService} from './services/dialog.service';
+import {NotificationsService} from './services/notifications.service';
+import {SettingsService} from './services/settings.service';
+import {ShortcutsService} from './services/shortcuts.service';
+import {StorageService} from './services/storage.service';
+import {UpdateService} from './services/update.service';
+import {UtilsService} from './services/utils.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http, "./assets/i18n/");
+    return new TranslateHttpLoader(http, './assets/i18n/');
 }
 
 @NgModule({
@@ -52,7 +52,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         AboutComponent,
         FooterComponent,
         SidenavComponent,
-        RouteTitleComponent
+        RouteTitleComponent,
     ],
     imports: [
         BrowserModule,
@@ -63,8 +63,8 @@ export function HttpLoaderFactory(http: HttpClient) {
             loader: {
                 provide: TranslateLoader,
                 useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            }
+                deps: [HttpClient],
+            },
         }),
         MatButtonModule,
         MatIconModule,
@@ -82,7 +82,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatSliderModule,
         FlexLayoutModule,
         PagesModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
     providers: [
         DialogService,
@@ -91,14 +91,14 @@ export function HttpLoaderFactory(http: HttpClient) {
         UtilsService,
         SettingsService,
         StorageService,
-        NotificationsService
+        NotificationsService,
     ],
     entryComponents: [
         ShortcutsComponent,
         SettingsComponent,
-        AboutComponent
+        AboutComponent,
     ],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
 })
 export class AppModule {
 }

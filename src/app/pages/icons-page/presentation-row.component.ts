@@ -1,4 +1,4 @@
-import { Input, Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'presentation-row',
@@ -6,10 +6,10 @@ import { Input, Component } from '@angular/core';
                     <div class="row-label" >{{title}}</div>
                     <div fxLayout="row" fxLayoutAlign="space-evenly end" >
                         <ng-content></ng-content>
-                    </div> 
+                    </div>
                 </div>`,
     styleUrls: ['./presentation-row.component.scss'],
 })
 export class PresentationRowComponent {
-    @Input() title: string;
+    @Input() public title: string;
 }

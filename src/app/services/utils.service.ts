@@ -1,26 +1,8 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class UtilsService {
-
-    private remote: Electron.Remote;
-
-    private serviceCache: {
-        packageInformations
-    };
-
-    constructor(private http: HttpClient) {
-        this.remote = window.require("electron").remote;
-
-        this.serviceCache = {
-            packageInformations: false
-        };
-
-        this.getPackageInformations().then((packageInformations: any) => {
-            this.serviceCache.packageInformations = packageInformations;
-        });
-    }
 
     /**
      * Return true if the string is a JSON Object.
@@ -36,15 +18,33 @@ export class UtilsService {
         return true;
     }
 
+    private remote: Electron.Remote;
+
+    private serviceCache: {
+        packageInformations,
+    };
+
+    constructor(private http: HttpClient) {
+        this.remote = window.require('electron').remote;
+
+        this.serviceCache = {
+            packageInformations: false,
+        };
+
+        this.getPackageInformations().then((packageInformations: any) => {
+            this.serviceCache.packageInformations = packageInformations;
+        });
+    }
+
     /**
      * Return the json of package.json.
      * @returns {Promise<any>}
      */
     public getPackageInformations(): Promise<any> {
         if (this.serviceCache.packageInformations) {
-            return Promise.resolve(this.serviceCache.packageInformations)
+            return Promise.resolve(this.serviceCache.packageInformations);
         } else {
-            return this.http.get("../package.json").toPromise().then((packageInformations: any) => {
+            return this.http.get('../package.json').toPromise().then((packageInformations: any) => {
                 this.serviceCache.packageInformations = packageInformations;
 
                 return packageInformations;
@@ -64,7 +64,7 @@ export class UtilsService {
      * Close the application.
      */
     public closeApplication() {
-        let currentWindow = this.remote.getCurrentWindow();
+        const currentWindow = this.remote.getCurrentWindow();
 
         currentWindow.close();
     }
@@ -73,7 +73,7 @@ export class UtilsService {
      * Minimize the application.
      */
     public minimizeApplication() {
-        let currentWindow = this.remote.getCurrentWindow();
+        const currentWindow = this.remote.getCurrentWindow();
 
         currentWindow.minimize();
     }
@@ -82,7 +82,7 @@ export class UtilsService {
      * Invert the full screen setting of the application.
      */
     public toggleFullScreen() {
-        let currentWindow = this.remote.getCurrentWindow();
+        const currentWindow = this.remote.getCurrentWindow();
 
         if (this.isFullScreen()) {
             currentWindow.setFullScreen(false);
@@ -96,7 +96,7 @@ export class UtilsService {
      * @returns {boolean}
      */
     public isFullScreen(): boolean {
-        let currentWindow = this.remote.getCurrentWindow();
+        const currentWindow = this.remote.getCurrentWindow();
 
         return currentWindow.isFullScreen();
     }
@@ -108,16 +108,16 @@ export class UtilsService {
      * @returns {boolean}
      */
     public haveSameStructure(JSONObject1: object, JSONObject2: object): boolean {
+        // tslint:disable-next-line:no-shadowed-variable
         const fun = (JSONObject1: object, JSONObject2: object) => {
+            // tslint:disable-next-line:forin
             for (const key in JSONObject1) {
                 if (!JSONObject1.hasOwnProperty(key) || !JSONObject2.hasOwnProperty(key)) {
                     return false;
                 }
 
-                if (typeof JSONObject1[key] === "object") {
-                    if (!fun(JSONObject1[key], JSONObject2[key])) {
-                        return false;
-                    }
+                if ((typeof JSONObject1[key] === 'object') && (!fun(JSONObject1[key], JSONObject2[key]))) {
+                    return false;
                 }
             }
 

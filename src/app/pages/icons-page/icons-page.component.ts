@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import * as _ from 'lodash';
 
@@ -12,7 +12,7 @@ import * as _ from 'lodash';
             </form>
 
             <mat-grid-list cols="8" rowHeight="2:1" style="padding:0 20px;">
-                <mat-grid-tile *ngFor="let key of faKeysVisible" class="icon-tile" [routerLink]="['details', key]"> 
+                <mat-grid-tile *ngFor="let key of faKeysVisible" class="icon-tile" [routerLink]="['details', key]">
                     <div fxLayout="column" fxLayoutAlign="center center" >
                         <fa-icon [icon]="['far', key]"></fa-icon>
                         <div class="icon-name" > {{key}}</div>
@@ -23,20 +23,20 @@ import * as _ from 'lodash';
     styleUrls: ['./icons-page.component.scss'],
 })
 export class PageIconsComponent implements OnInit {
-    faKeys: string[];
+    public faKeys: string[];
 
-    faKeysVisible: string[];
+    public faKeysVisible: string[];
 
-    searchTerm: string = "";
+    public searchTerm: string = '';
 
-    private searchDebounced = _.debounce((x) => this.searchChanged(x), 250, { 'maxWait': 1000 });
+    private searchDebounced = _.debounce((x) => this.searchChanged(x), 250, { maxWait: 1000 });
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.faKeys = Object.keys(far).map((name) => _.kebabCase(name.substr(2)) );
         this.faKeys = this.faKeys.filter((key) => key !== 'font-awesome-logo-full');
         this.faKeysVisible = this.faKeys;
     }
-    searchChanged(term) {
+    public searchChanged(term) {
         this.faKeysVisible = this.faKeys.filter((name) => name.search(term) !== -1);
     }
 }

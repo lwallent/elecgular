@@ -5,8 +5,8 @@ import { PageIconsModule } from './icons-page/icons-page.module';
     declarations: [
     ],
     exports: [
-        PageIconsModule
-    ]
+        PageIconsModule,
+    ],
 
 })
 export class PagesModule {}

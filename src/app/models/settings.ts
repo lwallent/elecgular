@@ -1,10 +1,9 @@
 
-export interface Settings {
-    general: General;
+export interface ISettings {
+    general: IGeneral;
 }
 
-
-interface General {
+interface IGeneral {
     language: string;
     firstTime: boolean;
 }

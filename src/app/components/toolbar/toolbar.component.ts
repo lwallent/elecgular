@@ -1,13 +1,13 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {UtilsService} from "../../services/utils.service";
-import {MatSidenav} from "@angular/material";
-import {DialogService} from "../../services/dialog.service";
+import {Component, Input} from '@angular/core';
+import {MatSidenav} from '@angular/material';
+import {DialogService} from '../../services/dialog.service';
+import {UtilsService} from '../../services/utils.service';
 
 @Component({
-    selector: "app-toolbar",
+    selector: 'app-toolbar',
     template: `<div class="toolbar">
                     <mat-toolbar fxLayout="row" fxLayoutAlign="end center" >
-                   
+
                         <button (click)="utilsService.toggleFullScreen()" class="fullscreen"
                                 color="primary" [title]="'TOOLTIPS.FULLSCREEN' | translate"
                                 mat-icon-button>
@@ -16,9 +16,9 @@ import {DialogService} from "../../services/dialog.service";
 
                     </mat-toolbar>
                 </div>`,
-    styleUrls: ["./toolbar.component.scss"]
+    styleUrls: ['./toolbar.component.scss'],
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
 
     @Input() public sidenav: MatSidenav;
 
@@ -26,9 +26,5 @@ export class ToolbarComponent implements OnInit {
 
     constructor(public utilsService: UtilsService,
                 public dialogService: DialogService) {
-    }
-
-    ngOnInit() {
-       
     }
 }

@@ -1,15 +1,15 @@
-import {Component, Input, OnInit} from "@angular/core";
-import {MatSidenav} from "@angular/material";
-import {DialogService} from "../../services/dialog.service";
-import {UtilsService} from "../../services/utils.service";
+import {Component, Input} from '@angular/core';
+import {MatSidenav} from '@angular/material';
+import {DialogService} from '../../services/dialog.service';
+import {UtilsService} from '../../services/utils.service';
 
 @Component({
-    selector: "app-sidenav",
-    templateUrl: "./sidenav.component.html",
-    styleUrls: ["./sidenav.component.scss"],
+    selector: 'app-sidenav',
+    templateUrl: './sidenav.component.html',
+    styleUrls: ['./sidenav.component.scss'],
 })
-export class SidenavComponent implements OnInit {
-    isExpanded = false;
+export class SidenavComponent {
+    public isExpanded = false;
     @Input() public sidenav: MatSidenav;
 
     public platform: string;
@@ -19,19 +19,7 @@ export class SidenavComponent implements OnInit {
         this.platform = window.process.platform;
     }
 
-    goA() {
-        console.log('Go A');
-    }
-
-    goB() {
-        console.log('Go B');
-    }
-
-    toggleExpanded() {
+    public toggleExpanded() {
         this.isExpanded = !this.isExpanded;
     }
-
-    ngOnInit() {
-    }
-
 }

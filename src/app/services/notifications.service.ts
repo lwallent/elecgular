@@ -1,7 +1,7 @@
-import {Injectable} from "@angular/core";
-import {MatSnackBar} from "@angular/material";
-import {TranslateService} from "@ngx-translate/core";
-import {BehaviorSubject, Observable} from "rxjs/index";
+import {Injectable} from '@angular/core';
+import {MatSnackBar} from '@angular/material';
+import {TranslateService} from '@ngx-translate/core';
+import {BehaviorSubject, Observable} from 'rxjs/index';
 
 @Injectable()
 export class NotificationsService {
@@ -10,7 +10,7 @@ export class NotificationsService {
 
     constructor(private matSnackBar: MatSnackBar,
                 private translateService: TranslateService) {
-        this.informationsSource = new BehaviorSubject<string>("");
+        this.informationsSource = new BehaviorSubject<string>('');
     }
 
     /**
@@ -19,10 +19,10 @@ export class NotificationsService {
      * @param {number} duration
      */
     public send(message: string, duration: number = 8000) {
-        this.translateService.get("DISMISS").toPromise().then((translation: string) => {
+        this.translateService.get('DISMISS').toPromise().then((translation: string) => {
             this.matSnackBar.open(message, translation, {
-                duration: duration,
-                panelClass: "snackbar"
+                duration,
+                panelClass: 'snackbar',
             });
         });
     }
@@ -45,7 +45,7 @@ export class NotificationsService {
 
         if (duration) {
             setTimeout(() => {
-                this.informationsSource.next("");
+                this.informationsSource.next('');
             }, duration);
         }
     }

@@ -18,6 +18,8 @@
     "scripts": {
         "start": "electron . --dev",
         "ng:build": "ng build --watch",
+        "lint": "ng lint",
+        "lint:fix": "ng lint --fix",
         "pack": "ng build --prod && electron-builder --dir",
         "release": "ng build --prod && electron-builder"
     },
@@ -62,6 +64,8 @@
         "mousetrap": "1.6.2",
         "rxjs": "6.3.2",
         "ts-node": "5.0.1",
+        "tslint": "^5.11.0",
+        "tslint-sonarts": "^1.8.0",
         "typescript": "2.9.2",
         "zone.js": "0.8.26"
     }

@@ -1,6 +1,6 @@
-import {Injectable, NgZone} from "@angular/core";
-import {DialogService} from "./dialog.service";
-import * as mousetrap from "mousetrap";
+import {Injectable, NgZone} from '@angular/core';
+import * as mousetrap from 'mousetrap';
+import {DialogService, DialogType} from './dialog.service';
 
 @Injectable()
 export class ShortcutsService {
@@ -13,47 +13,39 @@ export class ShortcutsService {
      * Set some global shortcuts.
      */
     public createShortcuts() {
-        mousetrap.bind("esc", () => {
+
+        const toggleDialog = (name: DialogType) => {
+            if (this.dialogService.getMatDialogStatus(name)) {
+                this.dialogService.closeMatDialog(name);
+            } else {
+                this.dialogService.openMatDialog(name);
+            }
+        };
+
+        mousetrap.bind('esc', () => {
             this.ngZone.run(() => {
-                if (this.dialogService.getMatDialogStatus("settings")) {
-                    this.dialogService.closeMatDialog("settings");
+                if (this.dialogService.getMatDialogStatus('settings')) {
+                    this.dialogService.closeMatDialog('settings');
                 }
 
-                if (this.dialogService.getMatDialogStatus("about")) {
-                    this.dialogService.closeMatDialog("about");
+                if (this.dialogService.getMatDialogStatus('about')) {
+                    this.dialogService.closeMatDialog('about');
                 }
             });
         });
 
-        mousetrap.bind("f2", () => {
+        mousetrap.bind('f2', () => {
             this.ngZone.run(() => {
                 // Rename ....
             });
         });
 
-   
-
-        mousetrap.bind("?", () => {
-            this.ngZone.run(() => {
-                if (this.dialogService.getMatDialogStatus("shortcuts")) {
-                    this.dialogService.closeMatDialog("shortcuts");
-                } else {
-                    this.dialogService.openMatDialog("shortcuts");
-                }
-            });
+        mousetrap.bind('?', () => {
+            this.ngZone.run(() => toggleDialog('shortcuts'));
         });
 
-        mousetrap.bind("ctrl+alt+s", () => {
-            this.ngZone.run(() => {
-                if (this.dialogService.getMatDialogStatus("settings")) {
-                    this.dialogService.closeMatDialog("settings");
-                } else {
-                    this.dialogService.openMatDialog("settings");
-                }
-            });
+        mousetrap.bind('ctrl+alt+s', () => {
+            this.ngZone.run(() => toggleDialog('settings'));
         });
-
-     
     }
-
 }

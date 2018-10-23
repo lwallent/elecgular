@@ -1,10 +1,10 @@
-import {Component, OnInit} from "@angular/core";
-import {NotificationsService} from "../../services/notifications.service";
+import {Component, OnInit} from '@angular/core';
+import {NotificationsService} from '../../services/notifications.service';
 
 @Component({
-    selector: "app-footer",
-    templateUrl: "./footer.component.html",
-    styleUrls: ["./footer.component.scss"]
+    selector: 'app-footer',
+    templateUrl: './footer.component.html',
+    styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
     constructor(public notificationsService: NotificationsService) {
     }
 
-    ngOnInit() {
+    public ngOnInit() {
         this.notificationsService.watchInfoStatus().subscribe((informations: string) => {
             this.informations = informations;
         });

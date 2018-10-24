@@ -1,9 +1,13 @@
 div.sidenav {
     
     div.sidenav-content {
-        .navLbl {
-            padding-left: 12px;
-        }
+         .navLbl {
+             padding-left: 12px;
+         }
+    }
+
+    div.sidenav-expanded {
+        width:200px;
     }
 }
 

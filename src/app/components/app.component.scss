@@ -3,6 +3,7 @@ mat-sidenav-container.mat-sidenav-container {
 
     mat-sidenav.mat-sidenav {
         border-left: 1px solid lightgray;
+        overflow-x: hidden;
     }
 
     mat-sidenav-content.mat-sidenav-content > div {

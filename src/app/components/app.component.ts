@@ -13,7 +13,7 @@ import {UpdateService} from '../services/update.service';
     selector: 'app-root',
     template: `<div style="height:100%" fxLayout="column">
                   <app-toolbar [sidenav]="sidenav" fxFlex="45px"></app-toolbar>
-                  <mat-sidenav-container autosize fxFlex >
+                  <mat-sidenav-container >
                     <mat-sidenav #sidenav mode="side" position="start" opened >
                         <app-sidenav [sidenav]="sidenav"></app-sidenav>
                     </mat-sidenav>

@@ -3,7 +3,6 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import * as _ from 'lodash';
 
 @Component({
-    selector: 'icons-page',
     template: `
             <form class="search-form">
                 <mat-form-field class="search-field">
@@ -20,9 +19,9 @@ import * as _ from 'lodash';
                 </mat-grid-tile>
             </mat-grid-list>`,
 
-    styleUrls: ['./icons-page.component.scss'],
+    styleUrls: ['./fa-overview.component.scss'],
 })
-export class PageIconsComponent implements OnInit {
+export class FaOverviewComponent implements OnInit {
     public faKeys: string[];
 
     public faKeysVisible: string[];

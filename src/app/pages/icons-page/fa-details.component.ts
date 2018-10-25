@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: 'icon-details-page',
     template: `<div fxLayout="column" fxLayoutGap="20px" >
                     <div fxLayout="row" style="min-height:100px">
                         <div fxFlex="80%"  fxLayout="column" style="padding: 30px" >
@@ -99,9 +98,9 @@ import { ActivatedRoute } from '@angular/router';
                   </presentation-row>
                   <div style="height:160px"></div> <!-- temp spacer -->
                 </div>`,
-    styleUrls: ['./icon-details-page.component.scss'],
+    styleUrls: ['./fa-details.component.scss'],
 })
-export class PageIconDetailsComponent implements OnInit {
+export class FaDetailsComponent implements OnInit {
 
     public key: string;
     public iconVersion: string = 'far';

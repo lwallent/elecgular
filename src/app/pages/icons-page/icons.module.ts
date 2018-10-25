@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { PageIconsComponent } from './icons-page.component';
+import { FaOverviewComponent } from './fa-overview.component';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 
@@ -12,21 +12,21 @@ import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { GlyphIconPageComponent } from './glyph-icon-page.component';
-import { PageIconDetailsComponent } from './icon-details-page.component';
-import { MatIconPageComponent } from './mat-icon-page.component';
-import { PresentationRowComponent } from './presentation-row.component';
+import { FaDetailsComponent } from './fa-details.component';
+import { GlyphOverviewComponent } from './glyph-overview.component';
 import { IconRoutes } from './icons.routing';
+import { MatOverviewComponent } from './mat-overview.component';
+import { PresentationRowComponent } from './presentation-row.component';
 // Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
 
 @NgModule({
     declarations: [
-        PageIconsComponent,
-        PageIconDetailsComponent,
+        FaOverviewComponent,
+        FaDetailsComponent,
         PresentationRowComponent,
-        GlyphIconPageComponent,
-        MatIconPageComponent,
+        GlyphOverviewComponent,
+        MatOverviewComponent,
     ],
     imports: [
       FontAwesomeModule,
@@ -43,9 +43,9 @@ library.add(fas, far);
     ],
     providers: [],
     exports: [
-      PageIconsComponent,
-      GlyphIconPageComponent,
-      MatIconPageComponent,
+      // PageIconsComponent,
+      // GlyphIconPageComponent,
+      // MatIconPageComponent,
     ],
   })
   export class PageIconsModule { }

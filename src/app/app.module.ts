@@ -19,8 +19,10 @@ import {
 } from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { AppRoutes } from './app.routing';
 import {AboutComponent} from './components/about/about.component';
 import {AppComponent} from './components/app.component';
 import {FooterComponent} from './components/footer/footer.component';
@@ -37,8 +39,6 @@ import {ShortcutsService} from './services/shortcuts.service';
 import {StorageService} from './services/storage.service';
 import {UpdateService} from './services/update.service';
 import {UtilsService} from './services/utils.service';
-import { RouterModule } from '@angular/router';
-import { AppRoutes } from './app.routing';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/');

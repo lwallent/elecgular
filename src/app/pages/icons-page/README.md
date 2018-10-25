@@ -5,6 +5,7 @@
  * Show path in footer thingy?
  * More pages (glyphicon, mat-icon?)
  * Add Sub sections to Icons on sidebar a la MS DevOps? 
+ * Make theming a settings tab
 
 ### Overview Page
 * Improve styling and clean up

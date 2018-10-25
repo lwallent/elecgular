@@ -16,6 +16,7 @@ import { GlyphIconPageComponent } from './glyph-icon-page.component';
 import { PageIconDetailsComponent } from './icon-details-page.component';
 import { MatIconPageComponent } from './mat-icon-page.component';
 import { PresentationRowComponent } from './presentation-row.component';
+import { IconRoutes } from './icons.routing';
 // Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
 
@@ -38,7 +39,7 @@ library.add(fas, far);
       MatButtonModule,
       FormsModule,
       FlexLayoutModule,
-      RouterModule,
+      RouterModule.forChild(IconRoutes),
     ],
     providers: [],
     exports: [

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PageIconsModule } from './icons-page/icons-page.module';
+import { PageIconsModule } from './icons-page/icons.module';
 
 @NgModule({
     declarations: [
@@ -7,6 +7,5 @@ import { PageIconsModule } from './icons-page/icons-page.module';
     exports: [
         PageIconsModule,
     ],
-
 })
 export class PagesModule {}

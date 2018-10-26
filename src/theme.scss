@@ -11,16 +11,19 @@
 // hue. Available color palettes: https://www.google.com/design/spec/style/color.html
 //$app-primary: mat-palette($mat-blue-gray, 600);
 //$app-accent: mat-palette($mat-gray, 50);
-
+$app-primary: mat-palette($mat-indigo);
+$app-accent: mat-palette($mat-green);
 // The warn palette is optional (defaults to red).
-//$app-warn: mat-palette($mat-red);
+$app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-//$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 //@include angular-material-theme($app-theme);
+
+// Not sure what the difference is in creating the theme your self and importing one . 
 
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";

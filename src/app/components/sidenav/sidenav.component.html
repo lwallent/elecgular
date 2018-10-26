@@ -2,12 +2,14 @@
     <div class="sidenav-content" style="height:100%" [ngClass]="{'sidenav-expanded': isExpanded}">
         <mat-nav-list fxLayout="column" style="height:100%" >
 
+            <side-menu-item [wide]="isExpanded" *ngFor="let item of navItems" [item]="item"></side-menu-item>
+
+            <!-- Side nav Contributions -->
             <mat-list-item routerLink="/icons/glyph" >
                 <button color="primary" mat-icon-button>
                   A
                 </button>
-                <span *ngIf="isExpanded" class="navLbl">Glyph Icons</span>
-               
+                <span *ngIf="isExpanded" class="navLbl">Glyph Icons</span>          
             </mat-list-item>
 
             <mat-list-item routerLink="/icons/mat" >
@@ -25,6 +27,8 @@
             </mat-list-item>
 
             <mat-divider ></mat-divider>
+
+            <!-- Workbench Items -->
 
             <mat-list-item  (click)="dialogService.openMatDialog('shortcuts')" >
                 <button color="primary" mat-icon-button>

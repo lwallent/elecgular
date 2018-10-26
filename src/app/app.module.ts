@@ -29,7 +29,9 @@ import {FooterComponent} from './components/footer/footer.component';
 import {RouteTitleComponent} from './components/route-title/route-title.component';
 import {SettingsComponent} from './components/settings/settings.component';
 import {ShortcutsComponent} from './components/shortcuts/shortcuts.component';
+import { SideMenuItemComponent } from './components/sidenav/side-menu-item.component';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
+import { SideNavService } from './components/sidenav/sidenav.service';
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
 import {PagesModule} from './pages/pages.module';
 import {DialogService} from './services/dialog.service';
@@ -54,6 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         FooterComponent,
         SidenavComponent,
         RouteTitleComponent,
+        SideMenuItemComponent,
     ],
     imports: [
         BrowserModule,
@@ -93,6 +96,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         SettingsService,
         StorageService,
         NotificationsService,
+        SideNavService,
     ],
     entryComponents: [
         ShortcutsComponent,

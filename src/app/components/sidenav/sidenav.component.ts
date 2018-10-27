@@ -3,14 +3,25 @@ import {MatSidenav} from '@angular/material';
 import {DialogService} from '../../services/dialog.service';
 import {UtilsService} from '../../services/utils.service';
 import { IMenuContribution } from './menu-contribution';
+import { trigger, state, transition, animate, style } from '@angular/animations';
 
 @Component({
     selector: 'app-sidenav',
     templateUrl: './sidenav.component.html',
     styleUrls: ['./sidenav.component.scss'],
+    animations: [
+        trigger('arrowRotate', [
+            state('backward', style({transform: 'rotate(0deg)'})),
+            state('forward', style({transform: 'rotate(180deg)'})),
+            transition('backward <=> forward',
+                animate('225ms cubic-bezier(0.4,0.0,0.2,1)'),
+            ),
+        ]),
+    ],
 })
 export class SidenavComponent {
     public isExpanded = false;
+    public expandLayout = 'column';
     @Input() public sidenav: MatSidenav;
 
     public platform: string;
@@ -363,5 +374,6 @@ export class SidenavComponent {
 
     public toggleExpanded() {
         this.isExpanded = !this.isExpanded;
+        this.expandLayout = this.isExpanded ? 'row' : 'column';
     }
 }

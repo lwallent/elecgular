@@ -50,34 +50,21 @@
 
             <mat-divider ></mat-divider>
 
-            <div fxLayout="row" *ngIf="isExpanded" style="width:200px">
+            <div [fxLayout]="expandLayout" >
                 <mat-list-item fxFlex (click)="dialogService.openMatDialog('settings')" >
                     <button color="primary" mat-icon-button>
                         <mat-icon>settings</mat-icon>
                     </button>
-                    <span class="navLbl">{{ "SETTINGS_TITLE" | translate }}</span>
+                    <span class="navLbl" *ngIf="isExpanded">{{ "SETTINGS_TITLE" | translate }}</span>
                 </mat-list-item>
                 <mat-list-item (click)="toggleExpanded()" >
                     <button class="close-menu" color="primary" [title]="'TOOLTIPS.EXPAND_MENU' | translate" mat-icon-button>
-                        <mat-icon>arrow_backward</mat-icon>
+                        <mat-icon [@arrowRotate]="isExpanded ? 'backward': 'forward'" >
+                            arrow_backward
+                        </mat-icon>
                     </button>
                 </mat-list-item>
             </div>
-
-            <div *ngIf="!isExpanded" >
-                <mat-list-item   (click)="dialogService.openMatDialog('settings')" >
-                    <button color="primary" mat-icon-button>
-                        <mat-icon>settings</mat-icon>
-                    </button>
-                </mat-list-item>
-                <mat-list-item  (click)="toggleExpanded()" >
-                    <button class="close-menu" color="primary" [title]="'TOOLTIPS.EXPAND_MENU' | translate" mat-icon-button>
-                        <mat-icon>arrow_forward</mat-icon>
-                    </button>
-                </mat-list-item>
-            </div>
-           
-            
         </mat-nav-list>
     </div>
 </div>

@@ -26,6 +26,37 @@ export class SidenavComponent {
 
     public platform: string;
 
+    public iconItems: IMenuContribution[] = [
+        {
+            displayName: 'Glyph Icons',
+            iconName: 'A',
+            route: '/icons/glyph',
+        },
+        {
+            displayName: 'MAT Icon',
+            iconName: 'B',
+            route: '/icons/mat',
+        },
+        {
+            displayName: 'FA Icons',
+            iconName: 'insert_emoticon',
+            route: '/icons/fa',
+        },
+    ];
+
+    public navBasicItems: IMenuContribution[] = [
+        {
+            displayKey: 'SHORTCUTS_TITLE',
+            iconName: 'timeline',
+            action: () => this.dialogService.openMatDialog('shortcuts'),
+        },
+        {
+            displayKey: 'ABOUT_TITLE',
+            iconName: 'info',
+            action: () => this.dialogService.openMatDialog('about'),
+        },
+    ];
+
     // Contributions hardcoded for now
     public navItems: IMenuContribution[] = [
         {

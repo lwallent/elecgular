@@ -13,7 +13,8 @@ import { SideNavService } from './sidenav.service';
                         <mat-icon>{{item.iconName}}</mat-icon>
                     </button>
                     <div fxFlex fxLayout="row" fxLayoutAlign="end end" *ngIf="wide">
-                        {{item.displayName}}
+                        <span *ngIf="item.displayName">{{item.displayName}}</span>
+                        <span *ngIf="item.displayKey">{{item.displayKey | translate}}</span>
                         <div fxFlex></div>
                         <mat-icon style="margin-right:10px" fxFlex="20px" *ngIf="item.children && item.children.length" [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
                             expand_more
@@ -52,7 +53,11 @@ export class SideMenuItemComponent {
 
     public onItemSelected(item: IMenuContribution) {
       if (!item.children || !item.children.length) {
-        this.router.navigate([item.route]);
+        if (item.route) {
+            this.router.navigate([item.route]);
+        } else if (item.action) {
+            item.action();
+        }
       }
       if (item.children && item.children.length) {
         this.expanded = !this.expanded;

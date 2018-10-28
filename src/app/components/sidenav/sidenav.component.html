@@ -5,46 +5,14 @@
             <side-menu-item [wide]="isExpanded" *ngFor="let item of navItems" [item]="item"></side-menu-item>
 
             <!-- Side nav Contributions -->
-            <mat-list-item routerLink="/icons/glyph" >
-                <button color="primary" mat-icon-button>
-                  A
-                </button>
-                <span *ngIf="isExpanded" class="navLbl">Glyph Icons</span>          
-            </mat-list-item>
-
-            <mat-list-item routerLink="/icons/mat" >
-                <button color="primary" mat-icon-button>
-                   B
-                </button>
-                <span *ngIf="isExpanded" class="navLbl">MAT Icons </span>
-            </mat-list-item>
-
-            <mat-list-item routerLink="/icons/fa" >
-                <button color="primary" mat-icon-button>
-                    <mat-icon>insert_emoticon</mat-icon>
-                </button>
-                <span *ngIf="isExpanded" class="navLbl">FA Icons</span>
-            </mat-list-item>
+            <side-menu-item [wide]="isExpanded" *ngFor="let item of iconItems" [item]="item"></side-menu-item>
 
             <mat-divider ></mat-divider>
 
             <!-- Workbench Items -->
-
-            <mat-list-item  (click)="dialogService.openMatDialog('shortcuts')" >
-                <button color="primary" mat-icon-button>
-                        <mat-icon>timeline</mat-icon>
-                </button>
-                <span *ngIf="isExpanded" class="navLbl">{{ "SHORTCUTS_TITLE" | translate }}</span>
-            </mat-list-item>
-          
-            <mat-list-item  (click)="dialogService.openMatDialog('about')">
-                <button color="primary" mat-icon-button>
-                <mat-icon>info</mat-icon>
-                </button>
-                <span *ngIf="isExpanded" class="navLbl">{{ "ABOUT_TITLE" | translate }}</span>
-            </mat-list-item>
-
-            <mat-divider ></mat-divider>
+            <side-menu-item [wide]="isExpanded" *ngFor="let item of navBasicItems" [item]="item"></side-menu-item>
+       
+            <mat-divider></mat-divider>
 
             <div fxFlex ></div>
 

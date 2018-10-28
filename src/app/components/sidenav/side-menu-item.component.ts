@@ -8,17 +8,17 @@ import { SideNavService } from './sidenav.service';
     selector: 'side-menu-item',
     template: `<mat-list-item [ngStyle]="{'padding-left': (+wide*depth * 12) + 'px'}" (click)="onItemSelected(item)"
                     [ngClass]="{'active': item.route ? router.isActive(item.route, true): false, 'expanded': expanded}">
+
                     <button color="primary" mat-icon-button>
                         <mat-icon>{{item.iconName}}</mat-icon>
                     </button>
-                    <span *ngIf="wide">{{item.displayName}}
-                        <span fxFlex *ngIf="item.children && item.children.length">
-                            <span fxFlex></span>
-                            <mat-icon [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
-                                expand_more
-                            </mat-icon>
-                        </span>
-                    </span>
+                    <div fxFlex fxLayout="row" fxLayoutAlign="end end" *ngIf="wide">
+                        {{item.displayName}}
+                        <div fxFlex></div>
+                        <mat-icon style="margin-right:10px" fxFlex="20px" *ngIf="item.children && item.children.length" [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+                            expand_more
+                        </mat-icon>
+                    </div>
                 </mat-list-item>
                 <div *ngIf="expanded && wide">
                     <side-menu-item *ngFor="let child of item.children" [item]="child" [depth]="depth+1" [wide]="wide">

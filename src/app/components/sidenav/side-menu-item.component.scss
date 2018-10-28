@@ -3,6 +3,7 @@
 :host {
   display: block;
   outline: none;
+  font-weight: 200;
 
   .mat-list-item.active {
     background-color: mat-color($app-primary, 50);

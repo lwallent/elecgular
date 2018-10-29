@@ -1,9 +1,9 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import {Component, Input} from '@angular/core';
 import {MatSidenav} from '@angular/material';
 import {DialogService} from '../../services/dialog.service';
 import {UtilsService} from '../../services/utils.service';
 import { IMenuContribution } from './menu-contribution';
-import { trigger, state, transition, animate, style } from '@angular/animations';
 
 @Component({
     selector: 'app-sidenav',

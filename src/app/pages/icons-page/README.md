@@ -3,12 +3,13 @@
 
 ### Workbench stuff
  * Show path in footer thingy?
- * More pages (glyphicon, mat-icon?)
+ * More pages (glyphicon,)
  * Add Sub sections to Icons on sidebar a la MS DevOps? 
  * Make theming a settings tab
 
 ### Overview Page
 * Improve styling and clean up
+* Share the grid
  
 ### Details Page
 * Add color selection. For- and background color using pallette.

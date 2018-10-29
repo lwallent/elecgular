@@ -1,8 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
+
+// Ok, this is kind of crazy and I am myself amazed that it worked :-)
+// tslint:disable-next-line:no-var-requires
+const elems = require('csv-loader!material-design-icons/iconfont/codepoints');
 
 @Component({
-    template: '<h1>Hello Mat Icon</h1>',
-})
-export class MatOverviewComponent {
+    template: `<key-search-bar [keys]="matKeys" (valueChange)="keysChanged($event)" ></key-search-bar>
 
+                <mat-grid-list cols="8" rowHeight="2:1" style="padding:0 20px;">
+                    <mat-grid-tile *ngFor="let key of matKeysVisible" class="icon-tile" [routerLink]="['details', key]">
+                        <div fxLayout="column" fxLayoutAlign="center center" >
+                            <mat-icon>{{key}}</mat-icon>
+                            <div class="icon-name" > {{key}}</div>
+                        </div>
+                    </mat-grid-tile>
+                </mat-grid-list>`,
+    styleUrls: ['./mat-overview.component.scss'],
+})
+export class MatOverviewComponent implements OnInit {
+
+    public matKeys: string[];
+    public matKeysVisible: string[];
+
+    public ngOnInit() {
+        // picked up as [ ["3d_rotation e84d"] ...]
+        this.matKeys = elems.map((tkns) => tkns[0].split(' ')[0]);
+        this.matKeysVisible = this.matKeys;
+    }
+
+    public keysChanged(keys) {
+        this.matKeysVisible = keys;
+    }
 }

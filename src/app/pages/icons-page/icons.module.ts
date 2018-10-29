@@ -7,7 +7,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatGridListModule, MatInputModule, MatSliderModule, MatSlideToggleModule } from '@angular/material';
+import { MatFormFieldModule, MatGridListModule, MatIconModule, MatInputModule, MatSliderModule, MatSlideToggleModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import { RouterModule } from '@angular/router';
 import { far } from '@fortawesome/free-regular-svg-icons';
@@ -15,6 +15,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FaDetailsComponent } from './fa-details.component';
 import { GlyphOverviewComponent } from './glyph-overview.component';
 import { IconRoutes } from './icons.routing';
+import { KeySearchBarComponent } from './key-search-bar.component';
+import { MatDetailsComponent } from './mat-details.component';
 import { MatOverviewComponent } from './mat-overview.component';
 import { PresentationRowComponent } from './presentation-row.component';
 // Adding all the modules, not the normal recommended way ...
@@ -27,6 +29,8 @@ library.add(fas, far);
         PresentationRowComponent,
         GlyphOverviewComponent,
         MatOverviewComponent,
+        MatDetailsComponent,
+        KeySearchBarComponent,
     ],
     imports: [
       FontAwesomeModule,
@@ -34,6 +38,7 @@ library.add(fas, far);
       MatGridListModule,
       MatFormFieldModule,
       MatInputModule,
+      MatIconModule,
       MatSliderModule,
       MatSlideToggleModule,
       MatButtonModule,

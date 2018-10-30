@@ -4,16 +4,12 @@ import * as _ from 'lodash';
 
 @Component({
     template: `<key-search-bar [keys]="faKeys" (valueChange)="keysChanged($event)" ></key-search-bar>
-
-                <icon-grid [iconKeys]="faKeysVisible">
-                    <ng-template let-key="key">
-                        <fa-icon [icon]="['far', key]"></fa-icon>
-                    </ng-template>
+                <icon-grid [iconKeys]="faKeysVisible" >
+                    <fa-icon *iconGridTemplate="let key" [icon]="['far', key]"></fa-icon>
                 </icon-grid>`,
 })
 export class FaOverviewComponent implements OnInit {
     public faKeys: string[];
-
     public faKeysVisible: string[];
 
     public ngOnInit(): void {

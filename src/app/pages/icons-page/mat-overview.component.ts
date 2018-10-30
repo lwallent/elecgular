@@ -8,9 +8,7 @@ const elems = require('csv-loader!material-design-icons/iconfont/codepoints');
 @Component({
     template: `<key-search-bar [keys]="matKeys" (valueChange)="keysChanged($event)" ></key-search-bar>
                 <icon-grid [iconKeys]="matKeysVisible">
-                    <ng-template let-key="key">
-                        <mat-icon>{{key}}</mat-icon>
-                    </ng-template>
+                    <mat-icon *iconGridTemplate="let key">{{key}}</mat-icon>
                 </icon-grid>`,
 })
 export class MatOverviewComponent implements OnInit {

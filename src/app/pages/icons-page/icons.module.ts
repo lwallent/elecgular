@@ -14,12 +14,13 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FaDetailsComponent } from './fa-details.component';
 import { GlyphOverviewComponent } from './glyph-overview.component';
+import { IconGridComponent } from './icon-grid.component';
 import { IconRoutes } from './icons.routing';
 import { KeySearchBarComponent } from './key-search-bar.component';
 import { MatDetailsComponent } from './mat-details.component';
 import { MatOverviewComponent } from './mat-overview.component';
 import { PresentationRowComponent } from './presentation-row.component';
-import { IconGridComponent } from './icon-grid.component';
+import { IconGridTemplateDirective } from './icon-grid-template.directive';
 // Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
 
@@ -33,6 +34,7 @@ library.add(fas, far);
         MatDetailsComponent,
         KeySearchBarComponent,
         IconGridComponent,
+        IconGridTemplateDirective,
     ],
     imports: [
       FontAwesomeModule,

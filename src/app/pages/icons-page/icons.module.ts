@@ -19,6 +19,7 @@ import { KeySearchBarComponent } from './key-search-bar.component';
 import { MatDetailsComponent } from './mat-details.component';
 import { MatOverviewComponent } from './mat-overview.component';
 import { PresentationRowComponent } from './presentation-row.component';
+import { IconGridComponent } from './icon-grid.component';
 // Adding all the modules, not the normal recommended way ...
 library.add(fas, far);
 
@@ -31,6 +32,7 @@ library.add(fas, far);
         MatOverviewComponent,
         MatDetailsComponent,
         KeySearchBarComponent,
+        IconGridComponent,
     ],
     imports: [
       FontAwesomeModule,

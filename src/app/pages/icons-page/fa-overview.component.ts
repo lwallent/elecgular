@@ -5,16 +5,11 @@ import * as _ from 'lodash';
 @Component({
     template: `<key-search-bar [keys]="faKeys" (valueChange)="keysChanged($event)" ></key-search-bar>
 
-               <mat-grid-list cols="8" rowHeight="2:1" style="padding:0 20px;">
-                    <mat-grid-tile *ngFor="let key of faKeysVisible" class="icon-tile" [routerLink]="['details', key]">
-                        <div fxLayout="column" fxLayoutAlign="center center" >
-                            <fa-icon [icon]="['far', key]"></fa-icon>
-                            <div class="icon-name" > {{key}}</div>
-                        </div>
-                    </mat-grid-tile>
-               </mat-grid-list>`,
-
-    styleUrls: ['./fa-overview.component.scss'],
+                <icon-grid [iconKeys]="faKeysVisible">
+                    <ng-template let-key="key">
+                        <fa-icon [icon]="['far', key]"></fa-icon>
+                    </ng-template>
+                </icon-grid>`,
 })
 export class FaOverviewComponent implements OnInit {
     public faKeys: string[];

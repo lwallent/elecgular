@@ -7,16 +7,11 @@ const elems = require('csv-loader!material-design-icons/iconfont/codepoints');
 
 @Component({
     template: `<key-search-bar [keys]="matKeys" (valueChange)="keysChanged($event)" ></key-search-bar>
-
-                <mat-grid-list cols="8" rowHeight="2:1" style="padding:0 20px;">
-                    <mat-grid-tile *ngFor="let key of matKeysVisible" class="icon-tile" [routerLink]="['details', key]">
-                        <div fxLayout="column" fxLayoutAlign="center center" >
-                            <mat-icon>{{key}}</mat-icon>
-                            <div class="icon-name" > {{key}}</div>
-                        </div>
-                    </mat-grid-tile>
-                </mat-grid-list>`,
-    styleUrls: ['./mat-overview.component.scss'],
+                <icon-grid [iconKeys]="matKeysVisible">
+                    <ng-template let-key="key">
+                        <mat-icon>{{key}}</mat-icon>
+                    </ng-template>
+                </icon-grid>`,
 })
 export class MatOverviewComponent implements OnInit {
 

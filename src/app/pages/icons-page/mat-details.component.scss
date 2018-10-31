@@ -1,6 +1,17 @@
+/* 1. Add this mixin to a "global" scss */
+
+@mixin md-icon-size($size: 24px) {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    line-height: $size;
+  }
+
+// How do we extract the normal size?
+
 @for $i from 1 through 6 {
     .size-#{$i}x {
-        transform: scale($i);
+        @include md-icon-size(#{$i*10}px);
     }
 }
     

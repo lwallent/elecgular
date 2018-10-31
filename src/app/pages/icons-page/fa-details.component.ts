@@ -119,7 +119,6 @@ export class FaDetailsComponent implements OnInit {
     public flipped = ['horizontal', 'vertical', 'both' ];
 
     constructor(private route: ActivatedRoute) {
-
     }
 
     public ngOnInit(): void {

@@ -1,0 +1,6 @@
+@for $i from 1 through 6 {
+    .size-#{$i}x {
+        transform: scale($i);
+    }
+}
+    

@@ -3,6 +3,7 @@
         <mat-nav-list fxLayout="column" style="height:100%" >
 
             <side-menu-item [wide]="isExpanded" *ngFor="let item of navItems" [item]="item"></side-menu-item>
+            <side-menu-item [wide]="isExpanded" *ngFor="let item of widgetItems" [item]="item"></side-menu-item>
 
             <!-- Side nav Contributions -->
             <side-menu-item [wide]="isExpanded" *ngFor="let item of iconItems" [item]="item"></side-menu-item>

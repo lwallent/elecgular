@@ -44,6 +44,19 @@ export class SidenavComponent {
         },
     ];
 
+    public widgetItems: IMenuContribution[] = [
+      {
+        displayName: 'Widgets',
+        iconName: 'apps',
+        children: [
+          {
+            displayName: 'Calendar',
+            iconName: 'perm_contact_calendar',
+          },
+        ],
+      },
+    ]
+
     public navBasicItems: IMenuContribution[] = [
         {
             displayKey: 'SHORTCUTS_TITLE',

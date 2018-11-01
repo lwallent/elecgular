@@ -13,7 +13,6 @@ import { RouterModule } from '@angular/router';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FaDetailsComponent } from './fa-details.component';
-import { GlyphOverviewComponent } from './glyph-overview.component';
 import { IconGridComponent } from './icon-grid.component';
 import { IconRoutes } from './icons.routing';
 import { KeySearchBarComponent } from './key-search-bar.component';
@@ -29,7 +28,6 @@ library.add(fas, far);
         FaOverviewComponent,
         FaDetailsComponent,
         PresentationRowComponent,
-        GlyphOverviewComponent,
         MatOverviewComponent,
         MatDetailsComponent,
         KeySearchBarComponent,

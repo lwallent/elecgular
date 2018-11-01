@@ -28,18 +28,13 @@ export class SidenavComponent {
 
     public iconItems: IMenuContribution[] = [
         {
-            displayName: 'Glyph Icons',
-            iconName: 'filter_1',
-            route: '/icons/glyph',
-        },
-        {
             displayName: 'MAT Icon',
-            iconName: 'filter_2',
+            iconName: 'filter_1',
             route: '/icons/mat',
         },
         {
             displayName: 'FA Icons',
-            iconName: 'filter_3',
+            iconName: 'filter_2',
             route: '/icons/fa',
         },
     ];

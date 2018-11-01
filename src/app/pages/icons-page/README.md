@@ -3,7 +3,6 @@
 
 ### Workbench stuff
  * Show path in footer thingy?
- * More pages (glyphicon,)
  * Add Sub sections to Icons on sidebar a la MS DevOps? 
  * Make menu Items contributed from the modules.
  * Make theming a settings tab

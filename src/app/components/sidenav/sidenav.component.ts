@@ -59,6 +59,10 @@ export class SidenavComponent {
 
     // Contributions hardcoded for now
     public navItems: IMenuContribution[] = [
+      {
+        displayName: 'Deep Menu',
+        iconName: 'recent_actors',
+        children: [
         {
           displayName: 'DevFestFL',
           iconName: 'recent_actors',
@@ -396,7 +400,9 @@ export class SidenavComponent {
             },
           ],
         },
-      ];
+        ];
+      }
+    ];
 
     constructor(public dialogService: DialogService,
                 public utilsService: UtilsService) {

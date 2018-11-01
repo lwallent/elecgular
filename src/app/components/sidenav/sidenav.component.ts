@@ -29,17 +29,17 @@ export class SidenavComponent {
     public iconItems: IMenuContribution[] = [
         {
             displayName: 'Glyph Icons',
-            iconName: 'A',
+            iconName: 'filter_1',
             route: '/icons/glyph',
         },
         {
             displayName: 'MAT Icon',
-            iconName: 'B',
+            iconName: 'filter_2',
             route: '/icons/mat',
         },
         {
             displayName: 'FA Icons',
-            iconName: 'insert_emoticon',
+            iconName: 'filter_3',
             route: '/icons/fa',
         },
     ];
@@ -61,7 +61,7 @@ export class SidenavComponent {
     public navItems: IMenuContribution[] = [
       {
         displayName: 'Deep Menu',
-        iconName: 'recent_actors',
+        iconName: 'call_split',
         children: [
         {
           displayName: 'DevFestFL',

@@ -1,13 +1,22 @@
 
 ## Ideas for the Icons Module
 
-### Workbench stuff
+### Workbench module
  * Show path in footer thingy?
  * Add Sub sections to Icons on sidebar a la MS DevOps? 
  * Make menu Items contributed from the modules.
+ * Make settingstab a contribution point?
+ * Make shortcuts contributions?
  * Make theming a settings tab
  * Make title just work from RouteNavigationEnd?
  * Change Icon routes to use child routes.
+
+### Modules
+ * Workbench (Menus, messages, dialogs, footer, settings, toolbar, about, shortcuts)
+ * User (Authentication, Role administration, user settings, )
+ * Scheduling (Setup available slots, pick available time, Appointments, show calendar)
+ * Survey? (Create questionaires, Render them)
+ * Reporting (create and show reports?)
 
 ### Widgets
 * Add a a calendar widget

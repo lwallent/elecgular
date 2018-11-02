@@ -41,6 +41,8 @@ import {ShortcutsService} from './services/shortcuts.service';
 import {StorageService} from './services/storage.service';
 import {UpdateService} from './services/update.service';
 import {UtilsService} from './services/utils.service';
+import { SideMenuContributionService } from './components/sidenav/side-menu.contribution.service';
+import { IconsActivationModule } from './pages/icons-page/icons.activation.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/');
@@ -86,6 +88,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         MatSliderModule,
         FlexLayoutModule,
         PagesModule,
+        IconsActivationModule,
         RouterModule.forRoot( AppRoutes,  {useHash: true}),
     ],
     providers: [
@@ -97,6 +100,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         StorageService,
         NotificationsService,
         SideNavService,
+        SideMenuContributionService,
     ],
     entryComponents: [
         ShortcutsComponent,

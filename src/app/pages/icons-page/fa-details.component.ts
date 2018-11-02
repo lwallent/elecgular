@@ -101,7 +101,6 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: ['./fa-details.component.scss'],
 })
 export class FaDetailsComponent implements OnInit {
-
     public key: string;
     public iconVersion: string = 'far';
 

@@ -4,6 +4,7 @@ import {MatSidenav} from '@angular/material';
 import {DialogService} from '../../services/dialog.service';
 import {UtilsService} from '../../services/utils.service';
 import { IMenuContribution } from './menu-contribution';
+import { SideMenuContributionService } from './side-menu.contribution.service';
 
 @Component({
     selector: 'app-sidenav',
@@ -26,18 +27,7 @@ export class SidenavComponent {
 
     public platform: string;
 
-    public iconItems: IMenuContribution[] = [
-        {
-            displayName: 'MAT Icon',
-            iconName: 'filter_1',
-            route: '/icons/mat',
-        },
-        {
-            displayName: 'FA Icons',
-            iconName: 'filter_2',
-            route: '/icons/fa',
-        },
-    ];
+    public menuItems: IMenuContribution[] = [];
 
     public widgetItems: IMenuContribution[] = [
       {
@@ -50,7 +40,7 @@ export class SidenavComponent {
           },
         ],
       },
-    ]
+    ];
 
     public navBasicItems: IMenuContribution[] = [
         {
@@ -408,13 +398,18 @@ export class SidenavComponent {
             },
           ],
         },
-        ];
+        ],
       }
     ];
 
     constructor(public dialogService: DialogService,
-                public utilsService: UtilsService) {
+                public utilsService: UtilsService,
+                private menuContributions: SideMenuContributionService) {
         this.platform = window.process.platform;
+    }
+
+    public ngOnInit() {
+      this.menuItems = this.menuContributions.getMenuItems();
     }
 
     public toggleExpanded() {

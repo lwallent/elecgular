@@ -399,7 +399,7 @@ export class SidenavComponent {
           ],
         },
         ],
-      }
+      },
     ];
 
     constructor(public dialogService: DialogService,

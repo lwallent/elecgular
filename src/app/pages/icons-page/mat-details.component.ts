@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
     template: `<div fxLayout="column" fxLayoutGap="20px" >
                 <div fxLayout="row" style="min-height:100px">
                     <div fxFlex="80%"  fxLayout="column" style="padding: 30px" >
-<!-- 
+<!--
                         <mat-slider [(ngModel)]="rotation" style="width:300px" thumbLabel tickInterval="10" min="0" max="360"></mat-slider>
 
                         <div fxLayout="row" fxLayoutAlign="space-between center">

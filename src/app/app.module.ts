@@ -30,9 +30,13 @@ import {RouteTitleComponent} from './components/route-title/route-title.componen
 import {SettingsComponent} from './components/settings/settings.component';
 import {ShortcutsComponent} from './components/shortcuts/shortcuts.component';
 import { SideMenuItemComponent } from './components/sidenav/side-menu-item.component';
+import { SideMenuContributionService } from './components/sidenav/side-menu.contribution.service';
 import {SidenavComponent} from './components/sidenav/sidenav.component';
 import { SideNavService } from './components/sidenav/sidenav.service';
 import {ToolbarComponent} from './components/toolbar/toolbar.component';
+import { FloorActivationModule } from './features/floor/floor.activation.module';
+import { FloorModule } from './features/floor/floor.module';
+import { IconsActivationModule } from './pages/icons-page/icons.activation.module';
 import {PagesModule} from './pages/pages.module';
 import {DialogService} from './services/dialog.service';
 import {NotificationsService} from './services/notifications.service';
@@ -41,8 +45,6 @@ import {ShortcutsService} from './services/shortcuts.service';
 import {StorageService} from './services/storage.service';
 import {UpdateService} from './services/update.service';
 import {UtilsService} from './services/utils.service';
-import { SideMenuContributionService } from './components/sidenav/side-menu.contribution.service';
-import { IconsActivationModule } from './pages/icons-page/icons.activation.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/');
@@ -89,6 +91,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         FlexLayoutModule,
         PagesModule,
         IconsActivationModule,
+        FloorModule,
+        FloorActivationModule,
         RouterModule.forRoot( AppRoutes,  {useHash: true}),
     ],
     providers: [

@@ -5,7 +5,6 @@ import { IMenuContribution } from './menu-contribution';
 export class SideMenuContributionService {
     private menuItems: IMenuContribution[] = [];
 
-
     public getMenuItems(): IMenuContribution[] {
         return this.menuItems;
     }

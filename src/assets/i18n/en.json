@@ -42,6 +42,7 @@
         "ICON_DETAILS": "Icon Details",
         "FA_ICON_OVERVIEW": "Font Awesome Icon Overview",
         "GLYPH_ICON_OVERVIEW": "Glyph Icon Overview",
-        "MAT_ICON_OVERVIEW": "Material Icon Overview"
+        "MAT_ICON_OVERVIEW": "Material Icon Overview",
+        "FLOOR_VIEW": "Floor View"
     }
 }

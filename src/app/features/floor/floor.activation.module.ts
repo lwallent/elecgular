@@ -8,14 +8,9 @@ export function someAppInitializer(menu: SideMenuContributionService) {
 
       const iconItems: IMenuContribution[] = [
         {
-            displayName: 'MAT Icon',
-            iconName: 'filter_1',
-            route: '/icons/mat',
-        },
-        {
-            displayName: 'FA Icons',
-            iconName: 'filter_2',
-            route: '/icons/fa',
+            displayName: 'Floor View',
+            iconName: 'grid_on',
+            route: '/floor',
         },
     ];
 
@@ -32,6 +27,6 @@ export function someAppInitializer(menu: SideMenuContributionService) {
         deps: [SideMenuContributionService],
       }],
 })
-export class IconsActivationModule {
+export class FloorActivationModule {
 
 }

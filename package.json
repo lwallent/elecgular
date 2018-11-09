@@ -32,8 +32,10 @@
         "@fortawesome/free-solid-svg-icons": "^5.4.0",
         "electron-log": "2.2.17",
         "electron-updater": "3.1.2",
+        "immutable": "^4.0.0-rc.12",
         "lodash": "^4.17.11",
-        "papaparse": "^4.6.1"
+        "papaparse": "^4.6.1",
+        "pixi.js": "^5.0.0-alpha.3"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "0.8.2",

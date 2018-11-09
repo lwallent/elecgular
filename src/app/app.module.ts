@@ -45,6 +45,7 @@ import {ShortcutsService} from './services/shortcuts.service';
 import {StorageService} from './services/storage.service';
 import {UpdateService} from './services/update.service';
 import {UtilsService} from './services/utils.service';
+import { ToolbarContributionService } from './components/toolbar/toolbar.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/');
@@ -105,6 +106,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         NotificationsService,
         SideNavService,
         SideMenuContributionService,
+        ToolbarContributionService,
     ],
     entryComponents: [
         ShortcutsComponent,

@@ -1,18 +1,33 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { ToolbarContributionService } from '../../components/toolbar/toolbar.service';
 import { PixiComponent } from './pixi.component';
 
 const CONTRIBUTION_ID = 'FLOOR_VIEW';
+ // tslint:disable:member-ordering
 
 @Component({
-    template: '<pixi #child ></pixi>',
+    template: `<div #viewport style="width:100%;height:100%">
+                <pixi #child ></pixi>
+               </div>`,
 })
-export class FloorComponent implements OnInit, OnDestroy {
+export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
 
     @ViewChild('child') private pixi: PixiComponent;
 
+    @ViewChild('viewport') private viewport: ElementRef;
+
+    @HostListener('window:resize') private onResize() {
+        if (this.viewport) {
+          this.adjustSize();
+        }
+    }
+
     constructor(private toolbarContribution: ToolbarContributionService) {
 
+    }
+
+    public ngAfterViewInit(): void {
+        this.adjustSize();
     }
 
     public ngOnDestroy(): void {
@@ -69,5 +84,9 @@ export class FloorComponent implements OnInit, OnDestroy {
             providerId: CONTRIBUTION_ID,
             actions,
         });
+    }
+
+    private adjustSize() {
+        this.pixi.setViewSize(this.viewport.nativeElement.clientWidth, this.viewport.nativeElement.clientHeight);
     }
 }

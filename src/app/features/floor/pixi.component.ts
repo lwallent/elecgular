@@ -155,7 +155,7 @@ export class PixiComponent implements OnInit {
         return texture;
     }
 
-    private setViewSize(w, h) {
+    public setViewSize(w, h) {
         if (this.app) {
            this.app.renderer.resize(w, h);
         }

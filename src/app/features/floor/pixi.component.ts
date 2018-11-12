@@ -63,9 +63,9 @@ export class PixiComponent implements OnInit {
         this.mmLand.addChild(this.floorplan); // The floorplan is a direct child of the stage
 
         // ADD TRANSFORM TOOL
-       // const placementLocator = new PlacementLocator();
-       // this.transformTool = new TransformTool(placementLocator);
-       // this.app.stage.addChild(this.transformTool);
+      //  const placementLocator = new PlacementLocator();
+        this.transformTool = new TransformTool();
+        this.app.stage.addChild(this.transformTool);
 
         // ADD SOME TEMP ROWS
         //   this.addSomeRows(this.floorplan, 3);
@@ -181,7 +181,6 @@ export class PixiComponent implements OnInit {
     }
 
     public zoomOut() {
-        console.log('ZOOM OUT CALLED ----');
         let scale = this.mmLand.scale.x;
         scale *= (1 - 0.1);
         this.mmLand.scale.x = this.mmLand.scale.y = scale;

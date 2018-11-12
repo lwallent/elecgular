@@ -57,6 +57,12 @@ export class FloorComponent implements OnInit, OnDestroy {
                     this.pixi.rowTool();
                 },
             },
+            {
+                iconName: 'movie',
+                action: () => {
+                    this.pixi.clearanceTool();
+                },
+            }
         ];
 
         this.toolbarContribution.add({

@@ -41,7 +41,7 @@ import {PagesModule} from './pages/pages.module';
 import {DialogService} from './services/dialog.service';
 import {NotificationsService} from './services/notifications.service';
 import {SettingsService} from './services/settings.service';
-import {ShortcutsService} from './services/shortcuts.service';
+import {ShortcutsService} from './components/shortcuts/shortcuts.service';
 import {StorageService} from './services/storage.service';
 import {UpdateService} from './services/update.service';
 import {UtilsService} from './services/utils.service';

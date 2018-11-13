@@ -1,12 +1,25 @@
 import {Injectable, NgZone} from '@angular/core';
 import * as mousetrap from 'mousetrap';
-import {DialogService, DialogType} from './dialog.service';
+import { DialogService, DialogType } from '../../services/dialog.service';
+import { IAction } from '../toolbar/toolbar.service';
 
 @Injectable()
 export class ShortcutsService {
 
     constructor(private ngZone: NgZone,
                 private dialogService: DialogService) {
+    }
+
+    public addAction(action: IAction) {
+        if (action.shortcut && action.action) {
+            mousetrap.bind(action.shortcut, action.action);
+        }
+    }
+
+    public removeAction(action: IAction) {
+        if (action.shortcut) {
+            mousetrap.unbind(action.shortcut);
+        }
     }
 
     /**
@@ -34,11 +47,11 @@ export class ShortcutsService {
             });
         });
 
-        mousetrap.bind('f2', () => {
-            this.ngZone.run(() => {
-                // Rename ....
-            });
-        });
+        // mousetrap.bind('f2', () => {
+        //     this.ngZone.run(() => {
+        //         // Rename ....
+        //     });
+        // });
 
         mousetrap.bind('?', () => {
             this.ngZone.run(() => toggleDialog('shortcuts'));
@@ -48,4 +61,6 @@ export class ShortcutsService {
             this.ngZone.run(() => toggleDialog('settings'));
         });
     }
+
+
 }

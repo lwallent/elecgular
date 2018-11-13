@@ -59,24 +59,28 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
                 action: () => {
                     this.pixi.usePointerTool();
                 },
+                shortcut: 'space',
             },
             {
                 iconName: 'pan_tool',
                 action: () => {
                     this.pixi.usePanTool();
                 },
+                shortcut: 'h',
             },
             {
                 iconName: 'drag_handle',
                 action: () => {
                     this.pixi.rowTool();
                 },
+                shortcut: 'r',
             },
             {
                 iconName: 'movie',
                 action: () => {
                     this.pixi.clearanceTool();
                 },
+                shortcut: 'c',
             }
         ];
 

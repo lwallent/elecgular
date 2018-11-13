@@ -3,6 +3,7 @@ import {MatSidenav} from '@angular/material';
 import {DialogService} from '../../services/dialog.service';
 import {UtilsService} from '../../services/utils.service';
 import { IAction, ToolbarContributionService } from './toolbar.service';
+import { ShortcutsService } from '../shortcuts/shortcuts.service';
 
 @Component({
     selector: 'app-toolbar',
@@ -31,18 +32,23 @@ export class ToolbarComponent implements OnInit {
 
     public savingStatus: any;
 
-    private contributed: IAction[];
+    private contributed: IAction[] = [];
 
     constructor(public utilsService: UtilsService,
                 public dialogService: DialogService,
-                private toolbarContributions: ToolbarContributionService) {
+                private toolbarContributions: ToolbarContributionService,
+                private shortcutService: ShortcutsService) {
     }
 
     public ngOnInit() {
         this.toolbarContributions.contributions.subscribe((res) => {
+            this.contributed.forEach((action) => this.shortcutService.removeAction(action));
+
             this.contributed = res.reduce<IAction[]>((reduction, contr) => {
                 return reduction.concat(contr.actions);
             }, []);
+
+            this.contributed.forEach((action) => this.shortcutService.addAction(action));
         });
     }
 

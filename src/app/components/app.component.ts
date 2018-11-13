@@ -6,8 +6,8 @@ import {ISettings} from '../models/settings';
 import {DialogService} from '../services/dialog.service';
 import {NotificationsService} from '../services/notifications.service';
 import {SettingsService} from '../services/settings.service';
-import {ShortcutsService} from '../services/shortcuts.service';
 import {UpdateService} from '../services/update.service';
+import { ShortcutsService } from './shortcuts/shortcuts.service';
 
 @Component({
     selector: 'app-root',

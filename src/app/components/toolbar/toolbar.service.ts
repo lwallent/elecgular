@@ -10,6 +10,7 @@ export interface IAction {
     displayKey?: string;
     disabled?: boolean;
     iconName: string;
+    shortcut?: string;
     route?: string;
 
     action?: () => void;

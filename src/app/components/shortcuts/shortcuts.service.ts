@@ -47,12 +47,6 @@ export class ShortcutsService {
             });
         });
 
-        // mousetrap.bind('f2', () => {
-        //     this.ngZone.run(() => {
-        //         // Rename ....
-        //     });
-        // });
-
         mousetrap.bind('?', () => {
             this.ngZone.run(() => toggleDialog('shortcuts'));
         });

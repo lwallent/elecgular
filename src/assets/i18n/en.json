@@ -44,5 +44,13 @@
         "GLYPH_ICON_OVERVIEW": "Glyph Icon Overview",
         "MAT_ICON_OVERVIEW": "Material Icon Overview",
         "FLOOR_VIEW": "Floor View"
+    },
+    "floor": {
+        "action": {
+            "POINTER": "Pointer",
+            "PAN": "Pan",
+            "ROW": "Row",
+            "CLEARANCE": "Clearance"
+        }
     }
 }

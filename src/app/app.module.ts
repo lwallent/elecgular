@@ -46,6 +46,7 @@ import {StorageService} from './services/storage.service';
 import {UpdateService} from './services/update.service';
 import {UtilsService} from './services/utils.service';
 import { ToolbarContributionService } from './components/toolbar/toolbar.service';
+import { PairsPipe } from './components/shortcuts/Pairs.pipe';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/');
@@ -62,6 +63,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         SidenavComponent,
         RouteTitleComponent,
         SideMenuItemComponent,
+        PairsPipe,
     ],
     imports: [
         BrowserModule,

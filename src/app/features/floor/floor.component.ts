@@ -60,6 +60,7 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
                     this.pixi.usePointerTool();
                 },
                 shortcut: 'space',
+                displayKey: 'floor.action.POINTER',
             },
             {
                 iconName: 'pan_tool',
@@ -67,6 +68,7 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
                     this.pixi.usePanTool();
                 },
                 shortcut: 'h',
+                displayKey: 'floor.action.PAN',
             },
             {
                 iconName: 'drag_handle',
@@ -74,6 +76,7 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
                     this.pixi.rowTool();
                 },
                 shortcut: 'r',
+                displayKey: 'floor.action.ROW',
             },
             {
                 iconName: 'movie',
@@ -81,7 +84,8 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
                     this.pixi.clearanceTool();
                 },
                 shortcut: 'c',
-            }
+                displayKey: 'floor.action.CLEARANCE',
+            },
         ];
 
         this.toolbarContribution.add({

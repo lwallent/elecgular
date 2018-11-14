@@ -1,6 +1,10 @@
 import { Component, OnDestroy, OnInit, ViewChild, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { ToolbarContributionService } from '../../components/toolbar/toolbar.service';
 import { PixiComponent } from './pixi.component';
+import { RowFactory } from './DisplayObjects/Row';
+import { CreateTool } from './Tools/CreateTool';
+import { ClearanceFactory } from './DisplayObjects/Clearance';
+import { PanTool } from './Tools/PanTool';
 
 const CONTRIBUTION_ID = 'FLOOR_VIEW';
  // tslint:disable:member-ordering
@@ -65,7 +69,7 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
             {
                 iconName: 'pan_tool',
                 action: () => {
-                    this.pixi.usePanTool();
+                    this.pixi.activateTool(new PanTool());
                 },
                 shortcut: 'h',
                 displayKey: 'floor.action.PAN',
@@ -73,7 +77,7 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
             {
                 iconName: 'drag_handle',
                 action: () => {
-                    this.pixi.rowTool();
+                    this.pixi.activateTool(new CreateTool( new RowFactory()));
                 },
                 shortcut: 'r',
                 displayKey: 'floor.action.ROW',
@@ -81,7 +85,7 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
             {
                 iconName: 'movie',
                 action: () => {
-                    this.pixi.clearanceTool();
+                    this.pixi.activateTool(new CreateTool( new ClearanceFactory()));
                 },
                 shortcut: 'c',
                 displayKey: 'floor.action.CLEARANCE',

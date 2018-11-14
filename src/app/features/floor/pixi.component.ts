@@ -1,12 +1,9 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Application } from 'pixi.js';
 import { FloorPlan } from './DisplayObjects/FloorPlan';
-import { Row, RowFactory } from './DisplayObjects/Row';
-import { ClearanceFactory } from './DisplayObjects/Clearance';
+import { Row } from './DisplayObjects/Row';
 import { TransformTool } from './Tools/TransformTool';
-import { CreateTool } from './Tools/CreateTool';
 import { SelectTool } from './Tools/SelectTool';
-import { PanTool } from './Tools/PanTool';
 
 // tslint:disable:member-ordering
 
@@ -63,7 +60,7 @@ export class PixiComponent implements OnInit {
         this.mmLand.addChild(this.floorplan); // The floorplan is a direct child of the stage
 
         // ADD TRANSFORM TOOL
-      //  const placementLocator = new PlacementLocator();
+        //  const placementLocator = new PlacementLocator();
         this.transformTool = new TransformTool();
         this.app.stage.addChild(this.transformTool);
 
@@ -218,15 +215,11 @@ export class PixiComponent implements OnInit {
         }
     }
 
-    private activateTool(tool) {
+    public activateTool(tool) {
         this.deactivateTool();
         this.tool = tool;
         this.app.stage.addChild(this.tool);
         this.tool.apply(this.floorplan);
-    }
-
-    public usePanTool() {
-        this.activateTool(new PanTool());
     }
 
     public usePointerTool() {
@@ -240,13 +233,5 @@ export class PixiComponent implements OnInit {
             },
         };
         this.activateTool(new SelectTool(selectionManager));
-    }
-
-    public rowTool() {
-        this.activateTool(new CreateTool( new RowFactory()));
-    }
-
-    public clearanceTool() {
-       this.activateTool(new CreateTool( new ClearanceFactory()));
     }
 }

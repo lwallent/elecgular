@@ -64,71 +64,14 @@ export class PixiComponent implements OnInit {
         this.transformTool = new TransformTool();
         this.app.stage.addChild(this.transformTool);
 
-        // ADD SOME TEMP ROWS
-        //   this.addSomeRows(this.floorplan, 3);
-
         //  let tileGraphics = createFloorTiles();
         //  this.floorplan.addChild(tileGraphics);
 
-        //      this.addFloorAssets(design, this.floorplan);
-
-        // TEMP TRANSFORM TESTING ...
-        const row = new Row({physicalProperties: { width: 10000, depth: 1070, height: 0, weight: 0}, label: 'Row A'});
-        row.y = 1500;
-        row.x = 50;
-
-        this.floorplan.addChild(row);
-        // TRANSFORM TEST END <<<<<<<<
+        // this.addFloorAssets(design, this.floorplan);
 
         // this.addFloorAssets(design, row);
 
-        //MAX OUT TESTING ....
-        // let rack = _.find(design.assets, (a)=> Asset.isRack(a));
-
-        //  //Max testing
-        //  let posX = 0;
-        //  let posY = 0;
-        //  let graphicAsset;
-        //  for (var i=0; i < 100; i++) {
-        //      for (var j=0; j < 100; j++) {
-        //          graphicAsset = new FloorAsset(rack);
-        //          this.floorplan.addChild(graphicAsset);
-        //          graphicAsset.x = posX;
-        //          graphicAsset.y = posY;
-        //          posX += graphicAsset.width;
-        //      }
-
-        //      posY += graphicAsset.height*2
-        //      posX = 0;
-        //  }
-
         this.usePointerTool();
-    }
-
-    // private addFloorAssets(design, parent) {
-
-    //     //for now just lay them out horizontally ...
-
-    //     let posX = 0;
-    //     _.forEach(design.assets, (asset) => {
-    //         if (Asset.isRack(asset)) {
-    //             let graphicAsset = new FloorAsset(asset);
-    //             parent.addChild(graphicAsset);
-    //             graphicAsset.x = posX;
-
-    //             posX += graphicAsset.width;
-    //         }
-    //     });
-    // }
-
-    private addSomeRows(floorplan, numRows) {
-         for (let i = 0; i < numRows; i++) {
-               const r1 = new Row({physicalProperties: {width: 10000, depth: 1070, height: 0, weight: 0}, label: 'Row ' + i});
-               r1.y = 1500 + i * (1070 + 1000);
-               r1.x = 0;
-
-               floorplan.addChild(r1);
-         }
     }
 
     private addBackgroundGrid(mmLand) {
@@ -156,6 +99,10 @@ export class PixiComponent implements OnInit {
         if (this.app) {
            this.app.renderer.resize(w, h);
         }
+    }
+
+    public getFloorPlan() {
+        return this.floorplan;
     }
 
     // ==================================

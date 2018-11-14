@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild, ElementRef, HostListener, AfterViewInit } from '@angular/core';
 import { ToolbarContributionService } from '../../components/toolbar/toolbar.service';
 import { PixiComponent } from './pixi.component';
-import { RowFactory } from './DisplayObjects/Row';
+import { RowFactory, Row } from './DisplayObjects/Row';
 import { CreateTool } from './Tools/CreateTool';
 import { ClearanceFactory } from './DisplayObjects/Clearance';
 import { PanTool } from './Tools/PanTool';
@@ -32,11 +32,13 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public ngAfterViewInit(): void {
         this.adjustSize();
+        this.loadContent();
     }
 
     public ngOnDestroy(): void {
         this.toolbarContribution.remove(CONTRIBUTION_ID);
     }
+
     public ngOnInit(): void {
 
         const actions = [
@@ -96,9 +98,77 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
             providerId: CONTRIBUTION_ID,
             actions,
         });
+
     }
 
     private adjustSize() {
         this.pixi.setViewSize(this.viewport.nativeElement.clientWidth, this.viewport.nativeElement.clientHeight);
     }
+
+    private loadContent() {
+
+        // ADD SOME TEMP ROWS
+        this.addSomeRows(this.pixi.getFloorPlan(), 2);
+
+        this.addFloorTiles(this.pixi.getFloorPlan());
+
+        // Floor Assets can be added to both the floor but also to the row
+
+        // this.addFloorAssets(design, this.floorplan);
+
+        // this.addFloorAssets(design, row);
+    }
+
+    private maxoutTesting() {
+        //MAX OUT TESTING ....
+        // let rack = _.find(design.assets, (a)=> Asset.isRack(a));
+
+        //  //Max testing
+        //  let posX = 0;
+        //  let posY = 0;
+        //  let graphicAsset;
+        //  for (var i=0; i < 100; i++) {
+        //      for (var j=0; j < 100; j++) {
+        //          graphicAsset = new FloorAsset(rack);
+        //          this.pixi.getFloorPlan().addChild(graphicAsset);
+        //          graphicAsset.x = posX;
+        //          graphicAsset.y = posY;
+        //          posX += graphicAsset.width;
+        //      }
+
+        //      posY += graphicAsset.height*2
+        //      posX = 0;
+        //  }
+    }
+
+    private addFloorTiles(floorplan) {
+        //  let tileGraphics = createFloorTiles();
+        //  floorplan.addChild(tileGraphics);
+    }
+
+    private addFloorAssets(design, parent) {
+
+        //for now just lay them out horizontally ...
+
+        // let posX = 0;
+        // _.forEach(design.assets, (asset) => {
+        //     if (Asset.isRack(asset)) {
+        //         let graphicAsset = new FloorAsset(asset);
+        //         parent.addChild(graphicAsset);
+        //         graphicAsset.x = posX;
+
+        //         posX += graphicAsset.width;
+        //     }
+        // });
+    }
+
+    private addSomeRows(floorplan, numRows) {
+        for (let i = 0; i < numRows; i++) {
+              const r1 = new Row({physicalProperties: {width: 10000, depth: 1070, height: 0, weight: 0}, label: 'Row ' + i});
+              r1.y = 1500 + i * (1070 + 1000);
+              r1.x = 0;
+
+              floorplan.addChild(r1);
+        }
+   }
 }

@@ -37,8 +37,7 @@ export class PanTool extends PIXI.Container {
     }
 
     public clear() {
-        for (let i = 0; i < this.children.length; i++){
-            let item = this.children[i];
+        for (let item of this.children) {
             this.removeChild(item);
             item.destroy();
             item = null;

@@ -46,8 +46,7 @@ export class SelectTool extends PIXI.Container {
     }
 
     public clear() {
-        for (let i = 0; i< this.children.length; i++){
-            let item = this.children[i];
+        for (let item of this.children) {
             this.removeChild(item);
             item.destroy();
             item = null;
@@ -74,7 +73,7 @@ export class SelectTool extends PIXI.Container {
             // start = event.data.getLocalPosition(this.parent);
             // this.addChild(selector);
 
-            let hitObj = this.manager.hitTest(event.data.global, this.target);
+            const hitObj = this.manager.hitTest(event.data.global, this.target);
 
             // No -> Clear selection
             if (hitObj == null) {

@@ -77,11 +77,11 @@ export class Row extends ModelDisplayObject implements IRow {
             let lbl = this.graphics.getChildByName('lbl') as PIXI.Text;
 
             if (lbl === null) {
-              lbl = new PIXI.Text(this.model.label, {fontSize: '160pt'});
-              lbl.name = 'lbl';
-              lbl.x = 0;
-              lbl.y = 0;
-              this.graphics.addChild(lbl);
+                lbl = new PIXI.Text(this.model.label, {fontSize: '160pt'});
+                lbl.name = 'lbl';
+                lbl.x = 0;
+                lbl.y = 0;
+                this.graphics.addChild(lbl);
             } else {
                 lbl.text = this.model.label;
             }

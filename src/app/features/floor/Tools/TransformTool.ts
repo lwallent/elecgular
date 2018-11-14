@@ -1,6 +1,5 @@
 import { GPixi } from '../Helpers/GPixi';
 import { MPixi } from '../Helpers/MPixi';
-// import * as PIXI from 'pixi.js';
 import { ModelDisplayObject } from '../Interfaces';
 // import { IPlacementLocator } from '../Placement/PlacementLocator';
 
@@ -43,8 +42,7 @@ export class TransformTool extends PIXI.Container {
     }
 
     public clear() {
-        for (let i = 0; i < this.children.length; i++) {
-            let item = this.children[i];
+        for (let item of this.children) {
             this.removeChild(item);
             item.destroy();
             item = null;
@@ -378,7 +376,6 @@ export class TransformTool extends PIXI.Container {
            //     this.rotateLayer.y += dy
              //   this.target.updateModel({physicalProperties: { width: startTargetWidth, depth: startTargetHeight+targetDelta.y }});
              }
-
         };
 
         // REGISTER HANDLERS

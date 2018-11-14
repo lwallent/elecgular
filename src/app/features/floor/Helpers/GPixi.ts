@@ -1,19 +1,25 @@
 import { DisplayObject } from 'pixi.js';
-// import * as PIXI from 'pixi.js';
 import { ObjectType } from '../DisplayObjects/ObjectType';
 import { ModelDisplayObject } from '../Interfaces';
 
 // methods ported from https://github.com/mrgoonie/pixi-transform-tool/blob/master/js/plugins/gpixi.js
+
+const zIndexSorter = (a, b) => {
+    a.zIndex = a.zIndex || 0;
+    b.zIndex = b.zIndex || 0;
+    return a.zIndex - b.zIndex;
+};
 
 export class GPixi {
     public static moveToTop(item: any) {
         const parent = item.parent;
         const topZIndex = parent.children.length - 1;
         for (let i = 0; i < parent.children.length; i++) {
-            parent.children[i].zIndex = i; // re-assign zIndex to children
+            const child = parent.children[i];
+            child.zIndex = i; // re-assign zIndex to children
 
-            if (parent.children[i].zIndex > item.zIndex) {
-                parent.children[i].zIndex = parseInt(parent.children[i].zIndex, 10) - 1;
+            if (child.zIndex > item.zIndex) {
+                child.zIndex = parseInt(child.zIndex, 10) - 1;
             }
         }
 
@@ -21,11 +27,7 @@ export class GPixi {
         // parent.children[topZIndex].zIndex = item.zIndex;
         item.zIndex = topZIndex;
         // sort children..
-        parent.children.sort((a, b) => {
-            a.zIndex = a.zIndex || 0;
-            b.zIndex = b.zIndex || 0;
-            return a.zIndex - b.zIndex;
-        });
+        parent.children.sort(zIndexSorter);
     }
 
     public static moveToBottom(item: any) {
@@ -39,11 +41,7 @@ export class GPixi {
         // parent.children[bottomZIndex].zIndex = item.zIndex;
         item.zIndex = bottomZIndex;
         // sort children..
-        parent.children.sort((a, b) =>  {
-            a.zIndex = a.zIndex || 0;
-            b.zIndex = b.zIndex || 0;
-            return a.zIndex - b.zIndex;
-        });
+        parent.children.sort(zIndexSorter);
     }
 
     public static moveAboveItem(target, item) {
@@ -58,11 +56,7 @@ export class GPixi {
         }
         target.zIndex = item.zIndex + 1;
         // sort children..
-        parent.children.sort((a, b) =>  {
-            a.zIndex = a.zIndex || 0;
-            b.zIndex = b.zIndex || 0;
-            return a.zIndex - b.zIndex;
-        });
+        parent.children.sort(zIndexSorter);
     }
 
     public static moveBelowItem(target, item) {
@@ -77,11 +71,7 @@ export class GPixi {
         }
         target.zIndex = item.zIndex - 1;
         // sort children..
-        parent.children.sort((a, b) => {
-            a.zIndex = a.zIndex || 0;
-            b.zIndex = b.zIndex || 0;
-            return a.zIndex - b.zIndex;
-        });
+        parent.children.sort(zIndexSorter);
     }
 
     public static swapIndex(item1, item2) {
@@ -99,11 +89,7 @@ export class GPixi {
         item2.zIndex = item1.zIndex;
         item1.zIndex = tmpZindex;
         // sort children..
-        parent.children.sort((a, b) => {
-            a.zIndex = a.zIndex || 0;
-            b.zIndex = b.zIndex || 0;
-            return a.zIndex - b.zIndex;
-        });
+        parent.children.sort(zIndexSorter);
     }
 
     public static getRootContainer(item: DisplayObject): DisplayObject {
@@ -121,9 +107,7 @@ export class GPixi {
 
         result = (result) ? result : [];
 
-        let child;
-        for (let i = 0; i < container.children.length; i++) {
-            child = container.children[i];
+        for (const child of container.children as any) {
             if (child.type && child.type === type) {
                 result.push(child);
             }
@@ -141,8 +125,7 @@ export class GPixi {
         // NON RECURSIVE FOR NOW !?
         const rectangleCollision = (r, children) => {
 
-            for (let i = 0; i < children.length; i++) 	{
-                const child = children[i];
+            for (const child of children) 	{
                 const rc = child.getBounds(); // WE USE GLOBAL SHARED COORDINATE SPACE
 
                 if (GPixi.isBoundingBoxCollision(rc, r)) { // DOES NOT TAKE ROTATION INTO CONSIDERATION

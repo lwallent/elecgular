@@ -5,6 +5,9 @@ import { RowFactory, Row } from './DisplayObjects/Row';
 import { CreateTool } from './Tools/CreateTool';
 import { ClearanceFactory } from './DisplayObjects/Clearance';
 import { PanTool } from './Tools/PanTool';
+import { GraphicsModel } from './Interfaces';
+import * as _ from 'lodash';
+import { FloorAsset } from './DisplayObjects/FloorAsset';
 
 const CONTRIBUTION_ID = 'FLOOR_VIEW';
  // tslint:disable:member-ordering
@@ -146,29 +149,42 @@ export class FloorComponent implements OnInit, OnDestroy, AfterViewInit {
         //  floorplan.addChild(tileGraphics);
     }
 
-    private addFloorAssets(design, parent) {
+    private addFloorAssets(parent) {
 
-        //for now just lay them out horizontally ...
+        const floorAssets: GraphicsModel[] = [
+            {
+                label: 'R1.1',
+                physicalProperties: {
+                    width: 600,
+                    height: 2100,
+                    depth: 1070,
+                    weight: 3000,
+                },
+            },
+        ];
 
-        // let posX = 0;
-        // _.forEach(design.assets, (asset) => {
-        //     if (Asset.isRack(asset)) {
-        //         let graphicAsset = new FloorAsset(asset);
-        //         parent.addChild(graphicAsset);
-        //         graphicAsset.x = posX;
+        // for now just lay them out horizontally ...
+        let posX = 0;
+        _.forEach(floorAssets, (asset) => {
 
-        //         posX += graphicAsset.width;
-        //     }
-        // });
+            const graphicAsset = new FloorAsset(asset);
+            parent.addChild(graphicAsset);
+            graphicAsset.x = posX;
+
+            posX += graphicAsset.width;
+        });
     }
+
 
     private addSomeRows(floorplan, numRows) {
         for (let i = 0; i < numRows; i++) {
-              const r1 = new Row({physicalProperties: {width: 10000, depth: 1070, height: 0, weight: 0}, label: 'Row ' + i});
-              r1.y = 1500 + i * (1070 + 1000);
-              r1.x = 0;
+            const r1 = new Row({physicalProperties: {width: 10000, depth: 1070, height: 0, weight: 0}, label: 'Row ' + i});
+            r1.y = 1500 + i * (1070 + 1000);
+            r1.x = 0;
 
-              floorplan.addChild(r1);
+            this.addFloorAssets(r1);
+
+            floorplan.addChild(r1);
         }
    }
 }

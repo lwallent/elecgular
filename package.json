@@ -34,7 +34,7 @@
         "electron-updater": "3.1.2",
         "immutable": "^4.0.0-rc.12",
         "lodash": "^4.17.11",
-        "papaparse": "^4.6.1",
+        "papaparse": "^5.2.0",
         "pixi.js": "^5.0.0-alpha.3"
     },
     "devDependencies": {

@@ -60,7 +60,7 @@
         "core-js": "2.5.7",
         "csv-loader": "^3.0.2",
         "electron": "2.0.9",
-        "electron-builder": "20.28.4",
+        "electron-builder": "20.44.4",
         "electron-reload": "1.2.5",
         "hammerjs": "2.0.8",
         "material-design-icons": "3.0.1",
